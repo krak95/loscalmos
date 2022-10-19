@@ -264,13 +264,15 @@ $('.itempage-container ol').html(data);
 })
 
 }else{
-alert('loginfirst');
+$('.login-div').show();
+$('.backcurtain').show();
 }
 })
 $('.backcurtain').click(function(){
 $('.shop-container tr').children().removeClass('itemselected');
 $('.backcurtain').hide();
 $('.itempage').hide();
+$('.login-div').hide();
 
 })
 $('.itempage-container').click(function(e){

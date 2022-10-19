@@ -150,7 +150,11 @@ $img = $row['img'];
 ?>
 <tr data-id='<?=$item_id?>'>
 <td>
-<img src='php/img/item-img/<?=$img?>' />
+<img <?php if(!isset($img)){ ?> 
+    src='php/img/icons/close.png?=$img?>' <?php
+}else{
+    ?> src='php/img/item-img/<?=$img?>' <?php
+} ?>  />
 
 </td>
 <td><?=$item_name?></td>
