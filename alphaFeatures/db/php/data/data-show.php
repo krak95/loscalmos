@@ -9,25 +9,13 @@ require "../../config/config.php";
 $sql = "SELECT * FROM '.$dbname.'.'.$table.'";
 $sql1 = $con->query($sql);
 $nrfields = mysqli_num_fields($sql1);
-echo $nrfields."<br>";
-$ALLDATA = array();
+echo $nrfields;
+while($row = $sql1->fetch_array()){
 
-while($row = mysqli_fetch_array($sql1, MYSQLI_ASSOC)){
     
+    print_r($row);
 
-    array_push($ALLDATA, $row);
-    ?>
     
-    <tr>
-    <td>
-    <?php 
-    print_r( $ALLDATA);
-    ?>
-    </td>
-    </tr>
-    
-    <?php
-
 } ?>
 ';
 
@@ -36,4 +24,3 @@ $file = fopen('data-showblueprint.php', 'w');
 	
  fwrite($file, $write);
  fclose($file);
-

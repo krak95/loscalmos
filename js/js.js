@@ -288,21 +288,32 @@ $.post('../php/shop/checkitem.php',
 {item_id: item_id}, 
 function(response) {
 if (response == 'exists') { 
-$('.iteminfo').append('<div id=red'+item_id+' class="itemexists">'+item_name+' exists</div>');
-setTimeout(function() {
-    $('#red'+item_id).remove();
-}, 2000);
-return;
+    if($('#red'+item_id).length == 0){
+        $('.iteminfo').append('<div id=red'+item_id+' class="itemexists">'+item_name+' exists!</div>');
+        setTimeout(function() {
+            $('#red'+item_id).addClass('iteminfo-toright');
+            setTimeout(function() {
+                $('#red'+item_id).remove();
+            }, 660);
+        }, 4000);
+        return;
+    }else{
+        $('#red'+item_id).addClass('iteminfo-blink-red');
+        setTimeout(function() {
+            $('#red'+item_id).removeClass('iteminfo-blink-red');
+        }, 660);
+    }
+
 }else{
 $.ajax({
 url:'../php/shop/addtocart.php',
 type:'post',
 data:{item_id:item_id},
 success:function(){
-$('.iteminfo').append('<div id=green'+item_id+' class="itemadded">'+item_name+' added</div>');
+$('.iteminfo').append('<div id=green'+item_id+' class="itemadded">'+item_name+' added!</div>');
 setTimeout(function() {
     $('#green'+item_id).remove();
-}, 2000);
+}, 4000);
 return;
 }
 })

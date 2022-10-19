@@ -1,0 +1,43 @@
+:root {
+    --dblue: #38435E;
+    --blue: #84A0DF;
+    --bblue:#CAD2E3;
+    --blue2:#657AAB;
+    --grey:#54575E;
+    --greenlight:rgb(0, 255, 0);
+    --lowgreen:rgb(198, 255, 198);
+  }
+*{
+    padding:0;
+    margin:0;
+}
+.mainbox{
+padding:100px;
+background-color: var(--bblue);
+}
+.draggable{
+  padding:50px;
+  position: fixed;
+  background-color: crimson;
+  z-index: 1;
+}
+.drophere{
+  transition: .5s;
+  padding:100px;
+  position: fixed;
+  right: 0;
+  margin:55px;
+  background-color: var(--dblue);
+}
+.active{
+transition:.5s;
+background: var(--blue2);
+}
+.hover{
+transition:.5s;
+background: var(--blue);
+}
+.dropped{
+transition:.5s;
+background-color: var(--greenlight);
+}

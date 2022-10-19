@@ -388,7 +388,6 @@ background-color: var(--blue);
 .itempage{
     display: none;
 }
-
 .itempage-container{
     position: fixed;
     border-radius:5px;
@@ -609,28 +608,40 @@ width: 50%;
     right: 0;
     margin:30px;
     margin-right: 50px;
+    z-index: 1;
 }
 .iteminfo div{
     text-align: center;
     max-width: 150px;
+    min-width: 150px;
 }
 .itemexists{
+    transition: .5s;
     background-color: var(--blue);
     border-radius: 5px;
-    box-shadow: 6px 6px 0px crimson;
+    box-shadow: 6px 6px 0px var(--dblue);
     margin-bottom:10px;
     padding:20px;
 }
 .itemadded{
+    transition: .5s;
     background-color: var(--blue);
     border-radius: 5px;
-    box-shadow: 6px 6px 0px var(--greenlight);
+    box-shadow: 6px 6px 0px var(--dblue);
     margin-bottom:10px;
     padding:20px;
 }
+.iteminfo-toright{
+    transform:translate(300px);
+    transition: 1s;
+}
+.iteminfo-blink-red{
+    transition: .5s;
+    box-shadow:3px 3px 20px 5px  crimson;
+}
 .backcurtain{
     background-color: black;
-    opacity: .5;
+    opacity: .4;
     position: fixed;
     top:0;
     width: 100%;
