@@ -1,0 +1,75 @@
+*{
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+padding:0;
+margin:20px;
+box-sizing: border-box;
+}
+body{
+    background-color: lightblue;
+}
+button{
+border:none;
+border-radius: 5px;
+}
+input{
+border-radius: 5px;
+border:none;
+text-align: center;
+}
+input:focus{
+outline:none;
+}
+.forms {
+    display: flex;
+    justify-content: center;
+}
+.signup-form{
+display: table-caption;
+background-color: slategray;
+border-radius: 5px;
+}
+.signup-form div{
+    display: flex;
+    justify-content: space-between;
+}
+.signup-form div:nth-child(1){
+    justify-content: center;
+}
+.signup-form div:nth-child(7){
+    justify-content: center;
+}
+
+.signup-form button{
+padding:20px;
+background-color: sandybrown;
+box-shadow:0 0 2px 2px  saddlebrown;
+
+}
+.signup-form button:hover{
+box-shadow:0 0  2px 2px inset saddlebrown;
+}
+.signin-form{
+display: table-caption;
+background-color: slategray;
+border-radius: 5px;
+}
+.signin-form div{
+    display: flex;
+    justify-content: space-between;
+}
+.signin-form div:nth-child(1){
+    justify-content: center;
+}
+.signin-form div:nth-child(4){
+    justify-content: center;
+}
+
+.signin-form button{
+padding:20px;
+background-color: sandybrown;
+box-shadow:0 0 2px 2px  saddlebrown;
+
+}
+.signin-form button:hover{
+box-shadow:0 0  2px 2px inset saddlebrown;
+}

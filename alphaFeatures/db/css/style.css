@@ -1,0 +1,239 @@
+:root {
+--dblue: #38435E;
+--blue: #84A0DF;
+--bblue:#CAD2E3;
+--blue2:#657AAB;
+--grey:#54575E;
+}
+*{
+padding:0;
+margin:0;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+button{
+border:0;
+border-radius: 5px;
+padding:4px;
+background-color: var(--grey);
+color:white;
+}
+button:hover{
+background-color: crimson;
+cursor: pointer;
+}
+input{
+border:none;
+background-color:var(--bblue);
+text-align: center;
+padding:4px;
+}
+input:focus{
+outline: none;
+background-color:white;
+}
+.global-div{
+display: flex;
+justify-content: flex-start;
+}
+.confirm{
+display:none;
+}
+.confirm-container{
+background-color: var(--blue);
+position: fixed;
+left:0;
+margin:0 auto;
+right:0;
+top: 20%;
+width: 50%;
+border-radius: 5px;
+box-shadow: 1px 1px 8px black;
+}
+.confirm-container ol{
+margin:16px;
+}
+.confirm-container li{
+display: flex;
+margin-bottom:20px;
+text-align: center;
+justify-content: space-evenly;
+}
+.confirm-container button{
+padding:10px;
+}
+.newdb-div{
+display:none;
+}
+.newdb-container{
+background-color: var(--blue);
+position: fixed;
+left:0;
+margin:0 auto;
+right:0;
+top: 20%;
+width: 50%;
+border-radius: 5px;
+box-shadow: 1px 1px 8px black;
+}
+.newdb-container ol{
+margin:16px;
+}
+.newdb-container li{
+display: flex;
+margin-bottom:20px;
+text-align: center;
+justify-content: space-evenly;
+}
+.newdb input{
+width: 50%;
+}
+.newdb-container button{
+padding:10px;
+}
+.database-show{
+display: flex;
+justify-content: left;
+}
+.database-show button{
+display: flex !important;
+padding: 12px !important;
+}
+.database-show-container{
+background-color: var(--bblue);
+height: 100%;
+}
+.database-show-container li{
+padding:6px;
+display:block;
+}
+.database-show-container li:hover{
+padding:6px;
+background-color: var(--blue);
+cursor: pointer;
+}
+.database-show-container li:nth-child(1){
+padding:8px;
+display:block;
+border-bottom:1px solid var(--dblue);
+font-size: 20px;
+font-weight: bolder;
+text-align: center;
+}
+.database-show-container li:nth-child(1):hover{
+padding:8px;
+display:block;
+font-size: 20px;
+font-weight: bolder;
+background-color: var(--bblue);
+cursor:auto;
+}
+.database-show-container li:nth-child(1) button{
+margin:0 auto;
+padding: 4px !important;
+}
+.tables-show{
+display:flex;
+justify-content: left;
+}
+.tables-show-container{
+background-color: var(--bblue);
+}
+.tables-show-container li{
+padding:6px;
+display:block;
+border-left:1px solid var(--dblue);
+}
+.tables-show-container li:hover{
+padding:6px;
+background-color: var(--blue);
+cursor: pointer;
+}
+.tables-show-container li:nth-child(1){
+padding:8px;
+display:block;
+border-left:1px solid var(--dblue);
+border-bottom:1px solid var(--dblue);
+font-size: 20px;
+font-weight: bolder;
+text-align: center;
+}
+.tables-show-container li:nth-child(1):hover{
+padding:8px;
+display:block;
+border-left:1px solid var(--dblue);
+font-size: 20px;
+font-weight: bolder;
+background-color: var(--bblue);
+cursor:auto;
+}
+.col-show{
+display: flex;
+justify-content: left;
+}
+.col-show-container{
+background-color: var(--bblue);
+height: 100vh;
+min-height: 100%;
+}
+.col-show-container li{
+padding:6px;
+display:block;
+border-left:1px solid var(--dblue);
+}
+.col-show-container li:hover{
+padding:6px;
+background-color: var(--blue);
+cursor: pointer;
+}
+.col-show-container li:nth-child(1){
+padding:8px;
+display:block;
+border-left:1px solid var(--dblue);
+border-bottom:1px solid var(--dblue);
+font-size: 20px;
+font-weight: bolder;
+text-align: center;
+}
+.col-show-container li::nth-child(1):hover{
+padding:8px;
+display:block;
+font-size: 20px;
+font-weight: bolder;
+background-color: var(--bblue);
+cursor:auto;
+}
+
+.data-show{
+    display:none;
+   
+}
+.data-show-container{
+display: flex;
+background-color: var(--blue);
+position: absolute;
+left:0;
+margin:0 auto;
+right:0;
+top: 20%;
+width: 50%;
+border-radius: 5px;
+box-shadow: 1px 1px 8px black;
+
+}
+.data-show-container table{
+}
+.data-show-container tr{
+display: flex;
+}
+.data-show-container td{
+   
+max-width: 30px;
+display:block;
+border-left:1px solid var(--dblue);
+
+}
+.data-show-container td:hover{
+padding:6px;
+background-color: var(--blue);
+cursor: pointer;
+}

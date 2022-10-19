@@ -1,0 +1,25 @@
+*{
+    background-color:whitesmoke;
+}
+button{
+    padding: 10px;
+    background-color: aquamarine;
+}
+button:hover{
+    cursor: pointer;
+    background-color: aqua;
+}
+input:focus{
+    outline:none;
+    background-color: white;
+}
+.form li{
+    display: block;
+}
+.table-show{
+    background-color: lightgrey;
+    padding:50px;
+}
+.table-show td {
+    width: calc(100%/3);
+}
