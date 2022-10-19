@@ -51,7 +51,7 @@ case 2:echo "<li class='stock-yellow'><div></div></li>";break;
 case 3:echo "<li class='stock-red'><div></div></li>";break;
 }
 ?>
-             <li><button class='addto-cart' data-id2='<?=$item_name?>' data-id='<?=$item_id?>' id='addtocart' class='carrinho-img'>Add to cart</button></li>
+              <li><button class='addto-cart' data-id2='<?=$item_name?>' data-id='<?=$item_id?>' id='addtocart' class='carrinho-img'>Add to cart</button></li>
     </li>
     <?php
 }

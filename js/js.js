@@ -274,7 +274,7 @@ $('.itempage').hide();
 
 })
 $('.itempage-container').click(function(e){
-e.stopPropagation();
+e.stopPropagation(); 
 })
 })
 }
