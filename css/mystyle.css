@@ -48,6 +48,15 @@ button:hover{
     position: fixed;
     top:0;
 }
+.shopmenu{
+    justify-content: left !important;
+    padding:0 !important;
+    margin:0 !important;
+    width: 50px !important;
+}
+.shopmenu:hover{
+    background-color: var(--blue) !important;
+}
 .topmenu ol{
     background-color: var(--blue);
     width: 100%;
@@ -55,16 +64,21 @@ button:hover{
     justify-content: center;
 }
 .topmenu li{
+    padding:8px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     transition: .3s;
-    padding:20px;
-    width: calc(100%/3);
+    width: calc(100%/4);
     display: flex;
     justify-content: center;
 }
 .topmenu li:hover{
-    transition: .3s;
+    transition: .1s;
     cursor:pointer;
-    background-color: var(--blue2);
+    filter: drop-shadow(2px 2px 2px var(--dblue));
+}
+.topmenu img{
+    width: 50px;
+    height: auto;
 }
 .topmenuselected{
     transition: .3s;
@@ -330,7 +344,7 @@ background-color: var(--blue);
 
 .shop-div{
     display:flex;
-    margin-top:80px;
+    margin-top:180px;
     justify-content: center;
 }
 .shop-container{

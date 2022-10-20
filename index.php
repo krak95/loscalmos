@@ -17,7 +17,6 @@ $admin=$_SESSION['admin'] ?? null;
 <script>
 loginform();
 login();
-focustopmenu();
 reguser();
 regform();
 wrongform();
@@ -43,16 +42,19 @@ additemadmin();
 <title></title>
 </head>
 <body>
-<div class='sessionstat'><?= $_SESSION['username'] ?? null; ?></div>
+<div style='display:none' class='sessionstat'><?= $_SESSION['username'] ?? null; ?></div>
 </div>
 <div class='topmenu'>
 <ol>
-<?php if (!isset($_SESSION['username']))
-{echo "<li id='topmenu-login'>Login</li>";}
-else
-{echo "<li id='topmenu-user'>Personal area</li>";} ?>
-<li id='topmenu-shop' class='topmenuselected'>Shop</li>
-<li id='topmenu-cart'>Cart</li>
+    <li><img src="php/img/icons/logo.png" alt=""> </li>
+    <?php if (!isset($_SESSION['username']))
+{echo "<li id='topmenu-login'><img src='php/img/icons/user.png'>
+    </li>";}
+    else
+    {echo "<li id='topmenu-user'><img src='php/img/icons/user.png'>
+        </li>";} ?>
+<li id='topmenu-shop' ><img src="php/img/icons/shop.png" alt=""></li>
+<li id='topmenu-cart'><img src="php/img/icons/cart.png" alt=""></li>
 </ol>
 </div>
 
