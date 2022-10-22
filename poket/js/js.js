@@ -68,6 +68,20 @@ $(document).ready(function(){
             }
         })
     })
+    $('#friends').on('click',function(){
+        $('.friends').show();
+        setInterval(() => {
+        $.ajax({
+            url:'php/users/userstatus.php',
+            success:function(data){
+                
+                $('.friends ol').html(data);
+                    
+                
+            }
+        })
+    }, 0);
+    })
 
 })
 

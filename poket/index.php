@@ -1,6 +1,7 @@
 <?php
 session_start();
 $username = $_SESSION['username'] ?? null;
+$ustat = $_SESSION['user_status'] ?? null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +14,17 @@ $username = $_SESSION['username'] ?? null;
 <title>Poket</title>
 </head>
 <body>
+    <div>
+    <?=$username?><br>
+    <?=$ustat?>
+
+    </div>
+<button id ='friends'>show friends</button>
+    <div class='friends'>
+<ol>
+    
+</ol>
+    </div>
 <div class='screen'>
     <div id='return' class='return'><img src="img/return.png" alt=""></div>
 <div class='mainmenu'>
