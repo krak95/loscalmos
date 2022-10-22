@@ -46,15 +46,15 @@ additemadmin();
 </div>
 <div class='topmenu'>
 <ol>
-    <li><img src="php/img/icons/logo.png" alt=""> </li>
+<a href=''><li><img src="php/img/icons/logo.png" alt=""> </li> </a>
     <?php if (!isset($_SESSION['username']))
-{echo "<li id='topmenu-login'><img src='php/img/icons/user.png'>
-    </li>";}
+{echo "<a><li id='topmenu-login'><img src='php/img/icons/user.png'>
+    </li></a>";}
     else
-    {echo "<li id='topmenu-user'><img src='php/img/icons/user.png'>
-        </li>";} ?>
-<li id='topmenu-shop' ><img src="php/img/icons/shop.png" alt=""></li>
-<li id='topmenu-cart'><img src="php/img/icons/cart.png" alt=""></li>
+    {echo "<a><li id='topmenu-user'><img src='php/img/icons/user.png'>
+        </li></a>";} ?>
+<a><li id='topmenu-shop' ><img src="php/img/icons/shop.png" alt=""></li></a>
+<a><li id='topmenu-cart'><img src="php/img/icons/cart.png" alt=""></li></a>
 </ol>
 </div>
 

@@ -12,7 +12,6 @@
     margin:0;
 }
 .mainbox{
-padding:100px;
 background-color: var(--bblue);
 }
 .draggable{
@@ -23,10 +22,10 @@ background-color: var(--bblue);
 }
 .drophere{
   transition: .5s;
-  padding:100px;
+  padding:120px;
   position: fixed;
-  right: 0;
-  margin:55px;
+  right: 20px;
+  top:20px;
   background-color: var(--dblue);
 }
 .active{
@@ -40,4 +39,13 @@ background: var(--blue);
 .dropped{
 transition:.5s;
 background-color: var(--greenlight);
+}
+.deck1{
+  position: fixed;
+  bottom:0;
+  display: flex;
+  background-color: var(--bblue);
+  width: 100px;
+  height: 30px;
+  border:2px var(--dblue) solid;
 }
