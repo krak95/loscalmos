@@ -35,7 +35,7 @@ alert('new user');
 })
 })
 
-$('#login-submit').on('click',function(){
+    $('#login-submit').on('click',function(){
 var username = $('#loguname').val();
 var user_pwd = $('#logpwd').val();
 $.ajax({
@@ -58,7 +58,7 @@ $(location).prop('href','');
 })
 })
 
-$('#profile').on('click',function(){
+    $('#profile').on('click',function(){
 $('.mainmenu').hide();
 $.ajax({
 url:'php/users/profile.php',
@@ -71,7 +71,7 @@ $('.profile-div table').html(data);
 })
 })
 
-$('#friendson').on('click',function(){
+    $('#friendson').on('click',function(){
 $('.friends-btn-on').addClass('friendsanime');
 $('.friends-btn-off').addClass('friendsanime');
 $('.backcurtain').show();
@@ -100,7 +100,7 @@ $('.friends ol').html(data);
 })
 }, 3000);
 
-$('#friendsoff').on('click',function(){
+    $('#friendsoff').on('click',function(){
 $('.friends-btn-on').removeClass('friendsanime');
 $('.friends-btn-off').removeClass('friendsanime');
 $('.backcurtain').hide();
@@ -115,20 +115,23 @@ $('#friendsoff').hide();
 })
 
 
-$('#submit-chat').on('click',function(){
+    $('#submit-chat').on('click',function(){
 let msg = $('#text-msg').val();
 let username = $('.chat-msg-box h3').html();
-$('.chat-msg-box').scrollTop($('.chat-msg-box ol')[0].scrollHeight);
 $.ajax({
 url:'php/chat/sent-chat.php',
 type:'post',
 data:{username:username,msg:msg},
 success:function(){
+    setTimeout(() => {
+        $('.chat-msg-box').scrollTop($('.chat-msg-box ol')[0].scrollHeight);
+        
+    }, 200);
+  
     
 }
 })
 })
-
 
     
     

@@ -30,7 +30,6 @@ break;
 } ?>
 <script>
 $(document).ready(function(){
-
 $('.friends li').on('click',function(){
 let username = $(this).data('id');
 $('.chat-box-div').css('display','flex');
@@ -44,7 +43,6 @@ $('.chat-msg-box ol').html(data)
 }
 })
 const refreshchat = setInterval(() => {
-    $('.chat-msg-box').scrollTop($('.chat-msg-box ol')[0].scrollHeight);
     $.ajax({
     url:'php/chat/chat.php',
     type:'post',
@@ -53,8 +51,18 @@ const refreshchat = setInterval(() => {
     $('.chat-msg-box ol').html(data)
     }
     })
+}, 250);
 
+let leng = 0;
+const ref = setInterval(() => {
+if(leng != $('.chat-msg-box li').length){
+    leng = $('.chat-msg-box li').length;
+    console.log(leng);
+    $('.chat-msg-box').scrollTop($('.chat-msg-box ol')[0].scrollHeight);
+}
 }, 150);
+
+
 $('.backcurtain,.return').on('click',function(){
     $('.chat-box-div').css('display','none');
     clearInterval(refreshchat);
