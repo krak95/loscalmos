@@ -1,4 +1,5 @@
 <?php
+include 'php/config/config.php';
 session_start();
 $username = $_SESSION['username'] ?? null;
 $ustat = $_SESSION['user_status'] ?? null;
@@ -10,24 +11,44 @@ $ustat = $_SESSION['user_status'] ?? null;
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href='css/style.css' rel='stylesheet'>
-<script src='js/library/jq.js'></script>
+
 <title>Poket</title>
 </head>
 <body>
-<?php if (isset($username)){
-?><div class='sidebar'>
+<?php 
+if(isset($username)){
+?>
+<div class='sidebar'>
 <div class='friends-btn-div'>
-<button class='friends-btn-on' id ='friendson'><img src="img/friend.png" alt=""></button>
-<button class='friends-btn-off' id ='friendsoff'><img src="img/friend.png" alt=""></button>
+   
+<button class='friends-btn-on' id ='friendson'><h3><?=$username?></h3><img src="img/friend.png" alt=""> </button>
+<button class='friends-btn-off' id ='friendsoff'><h3><?=$username?></h3><img src="img/friend.png" alt=""> </button>
 </div>
 
 <div class='friends'>
 <ol>
 </ol>
 </div>
-</div><?php
+</div>
+<?php
 }
 ?>
+
+<div class='chat-box-div'>
+<div class='chat-box-container'>
+
+<div class='chat-msg-box'>
+    <ol>
+    </ol>
+</div>
+
+<div class='chat-data-box'>
+<input type="text" id='text-msg'>
+<button id='submit-chat'>Send</button>
+</div>
+    
+</div>
+</div>
 
 
 <div class='screen'>
@@ -116,4 +137,6 @@ points:
 <div class='backcurtain'></div>
 </body>
 </html>
+<script src='js/library/jq.js'></script>
+
 <script src='js/js.js'></script>

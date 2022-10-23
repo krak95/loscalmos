@@ -20,9 +20,11 @@ background-color: var(--bblue);
 }
 button
 {
-border:0;
+border: 1px solid black;
 }
 input{
+border: 1px solid black;
+outline: none;
 border-radius: 5px;
 background-color: var(--bblue);
 text-align: center;
@@ -44,7 +46,7 @@ margin:10px;
 right: 0;
 }
 .return img{
-height: 80px;
+height: 40px;
 width: auto;
 margin:5px;
 }
@@ -55,6 +57,7 @@ box-shadow:0 0 0 0 var(--dblue);
 background-color: var(--bblue);
 }
 .return:hover{
+    cursor: pointer;
 transition:0.3s;
 box-shadow:0px 0px 3px 3px var(--dblue);
 background-color: var(--blue);
@@ -66,12 +69,10 @@ top:0;
 left:0;
 z-index: 1;
 }
-.sidebar img
+.friends-btn-div img
 {
-width: 40px;
+width: 30px;
 height: auto;
-margin-top:-15px;
-margin-left:-15px;
 }
 .friends-btn-div
 {
@@ -88,6 +89,7 @@ color: var(--bblue);
 border-bottom-right-radius:80px;
 }
 .friends-btn-on:hover{
+    cursor: pointer;
 transition:0.3s;
 color:var(--dblue);
 box-shadow:0px 0px 3px 3px var(--dblue);
@@ -104,6 +106,7 @@ color: var(--bblue);
 border-bottom-right-radius:80px;
 }
 .friends-btn-off:hover{
+    cursor: pointer;
 transition:0.3s;
 color:var(--dblue);
 box-shadow:0px 0px 3px 3px var(--dblue);
@@ -116,21 +119,22 @@ transition:.1s;
 }
 .friends
 {
+width: 200px;
 color:white;
 background-color: var(--dblue);
-left:-120px;
+left:-200px;
 position: fixed;
 top:80px;
 transition: 0.4s;
 }
 .friends-list-open
 {
-    color:white;
-    background-color: var(--dblue);
-    left:0;
-    position: fixed;
-    top:80px;
-    transition: 0.4s;
+color:white;
+background-color: var(--dblue);
+left:0;
+position: fixed;
+top:80px;
+transition: 0.4s;
 }
 .friendon
 {
@@ -142,17 +146,78 @@ color: crimson;
 }
 .friends ol
 {
-    padding:0;
-    background-color: var(--blue2);
-    display: block;
-    margin:10px;
+padding:0;
+background-color: var(--blue2);
+display: block;
+margin:10px;
 }
 .friends li
 {
-    padding:5px;
+padding:5px;
 border-bottom:1px solid var(--bblue);
-display: block;
+display: flex;
+justify-content: space-between;
 }
+.friends li:hover
+{
+cursor: pointer;
+background-color: var(--blue);
+}
+.chat-btn
+{
+width:20px;
+height:auto;
+}
+.chat-box-div
+{
+display:none;
+transform: translateY(50%);
+z-index: 1;
+justify-content: center;
+right: 0;
+left:0;
+position:absolute;
+}
+.chat-box-container
+{
+border-radius: 5px;
+border:2px solid black;
+padding:10px;
+background-color: var(--dblue);
+display:block;
+}
+.chat-msg-box
+{
+overflow-y: scroll;
+border-radius: 5px;
+height: 240px;
+background-color: white;
+}
+.chat-msg-box ol{
+}
+.chat-msg-box li{
+    display: flex;
+}
+.chat-msg-box h3
+{
+position: fixed;
+background-color: slategrey;
+text-align: center;
+
+}
+.chat-data-box button
+{
+border-radius: 5px;
+padding:2px;
+background-color: var(--blue2);
+}
+.chat-data-box button:hover
+{
+border-radius: 5px;
+background-color: var(--blue);
+}
+
+
 .mainmenu{
 transform:translateY(25%);
 right:0;
@@ -179,8 +244,8 @@ display: block;
 }
 .mainmenu li:hover{
 color: var(--dblue);
-    cursor: pointer;
-    background-color: var(--blue);
+cursor: pointer;
+background-color: var(--blue);
 }
 .form-signup
 {
@@ -233,6 +298,7 @@ width: 70%;
 }
 .form-login
 {
+transform:translateY(25%);
 display: flex;
 justify-content: center;
 }
@@ -356,11 +422,11 @@ box-shadow:-1px -1px 1px 1px var(--dblue);
 }
 .backcurtain
 {
-    display:none;
-    position:fixed;
-    top:0;
-    height:100%;
-    width:100%;
-    background-color:black;
-    opacity:0.6;
+display:none;
+position:fixed;
+top:0;
+height:100%;
+width:100%;
+background-color:black;
+opacity:0.6;
 }

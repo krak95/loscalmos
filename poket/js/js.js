@@ -109,9 +109,30 @@ clearInterval(refresh);
 setTimeout(() => {
 $('#friendson').show();
 $('#friendsoff').hide();
-    }, 530);
+}, 530);
 
 })
 })
+
+$('.chat-msg-box').scrollTop($('.chat-msg-box ol')[0].scrollHeight);
+$('#submit-chat').on('click',function(){
+let msg = $('#text-msg').val();
+let username = $('.chat-msg-box h3').html();
+$('.chat-msg-box').scrollTop($('.chat-msg-box ol')[0].scrollHeight);
+$.ajax({
+url:'php/chat/sent-chat.php',
+type:'post',
+data:{username:username,msg:msg},
+success:function(){
+    
+}
+})
+})
+
+
+    
+    
+
+//END OF DOCUMENT//
 })
 
