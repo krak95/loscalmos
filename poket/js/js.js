@@ -5,7 +5,7 @@ $('.form-login').hide();
 $('.profile-div').hide();
 $('#friendsoff').hide();
 
-$('#return').on('click',function(){
+    $('#return').on('click',function(){
 $('.mainmenu').show();
 $('.play-maindiv').hide();
 $('.form-signup').hide();
@@ -21,7 +21,7 @@ $('.mainmenu').hide();
 $('.form-signup').show();
 })
 
-$('#signup-submit').on('click',function(){
+    $('#signup-submit').on('click',function(){
 var username = $('#uname').val();
 var user_pwd = $('#email').val();
 var user_email = $('#pwd').val();
@@ -114,6 +114,11 @@ $('#friendsoff').hide();
 })
 })
 
+$('#text-msg').on('keypress',function(e){
+    if(e.which == 13) {
+        $('#submit-chat').click();
+    }
+})
 
     $('#submit-chat').on('click',function(){
 let msg = $('#text-msg').val();
@@ -123,18 +128,15 @@ url:'php/chat/sent-chat.php',
 type:'post',
 data:{username:username,msg:msg},
 success:function(){
-    setTimeout(() => {
-        $('.chat-msg-box').scrollTop($('.chat-msg-box ol')[0].scrollHeight);
-        
-    }, 200);
-  
-    
+setTimeout(() => {
+$('.chat-msg-box').scrollTop($('.chat-msg-box ol')[0].scrollHeight);
+
+}, 200);
+
 }
 })
 })
 
-    
-    
 
 //END OF DOCUMENT//
 })

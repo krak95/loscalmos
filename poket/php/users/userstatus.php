@@ -66,6 +66,7 @@ if(leng != $('.chat-msg-box li').length){
 $('.backcurtain,.return').on('click',function(){
     $('.chat-box-div').css('display','none');
     clearInterval(refreshchat);
+    clearInterval(ref);
 })
 })
 
