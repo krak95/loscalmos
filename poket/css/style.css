@@ -18,50 +18,159 @@ body
 {
 background-color: var(--bblue);
 }
+button
+{
+border:0;
+}
 input{
-    border-radius: 5px;
-    background-color: var(--bblue);
-    text-align: center;
+border-radius: 5px;
+background-color: var(--bblue);
+text-align: center;
 }
 input:focus{
-    background-color:whitesmoke;
-    outline:none;
+background-color:whitesmoke;
+outline:none;
 }
 .return
 {   
-    transition:0.5s;
-    z-index: 1;
-    position: fixed;
+{
+padding:5px;
+border-radius: 5px;   
+top:0;
+transition:0.5s;
+z-index: 1;
+margin:0 auto;
+position: fixed;
+margin:10px;
+right: 0;
 }
 .return img{
-    height: 80px;
-    width: auto;
+height: 80px;
+width: auto;
+margin:5px;
+}
+.return:active
+{
+transition:0.3s;
+box-shadow:0 0 0 0 var(--dblue);
+background-color: var(--bblue);
 }
 .return:hover{
-    transition:0.5s;
-    box-shadow:2px 2px 2px 2px var(--dblue);
-    background-color: var(--blue);
+transition:0.3s;
+box-shadow:0px 0px 3px 3px var(--dblue);
+background-color: var(--blue);
+}
+.sidebar
+{
+position:fixed;
+top:0;
+left:0;
+z-index: 1;
+}
+.sidebar img
+{
+width: 40px;
+height: auto;
+margin-top:-15px;
+margin-left:-15px;
+}
+.friends-btn-div
+{
+height: 80px;
+}
+.friends-btn-on
+{
+transition:0.3s;
+position: absolute;
+height: 80px;
+width: 80px;
+background-color: var(--dblue);
+color: var(--bblue);
+border-bottom-right-radius:80px;
+}
+.friends-btn-on:hover{
+transition:0.3s;
+color:var(--dblue);
+box-shadow:0px 0px 3px 3px var(--dblue);
+background-color: var(--blue);
+}
+.friends-btn-off
+{
+transition:0.3s;
+position: absolute;
+height: 80px;
+width: 80px;
+background-color: var(--dblue);
+color: var(--bblue);
+border-bottom-right-radius:80px;
+}
+.friends-btn-off:hover{
+transition:0.3s;
+color:var(--dblue);
+box-shadow:0px 0px 3px 3px var(--dblue);
+background-color: var(--blue);
+}
+.friendsanime
+{
+border-bottom-right-radius: 0px;
+transition:.1s;
 }
 .friends
 {
-    background-color: var(--dblue);
+color:white;
+background-color: var(--dblue);
+left:-120px;
+position: fixed;
+top:80px;
+transition: 0.4s;
+}
+.friends-list-open
+{
     color:white;
+    background-color: var(--dblue);
+    left:0;
+    position: fixed;
+    top:80px;
+    transition: 0.4s;
+}
+.friendon
+{
+color: var(--greenlight);
+}
+.friendoff
+{
+color: crimson;
+}
+.friends ol
+{
+    padding:0;
+    background-color: var(--blue2);
+    display: block;
+    margin:10px;
+}
+.friends li
+{
+    padding:5px;
+border-bottom:1px solid var(--bblue);
+display: block;
 }
 .mainmenu{
-position: fixed;
-right: 0;
+transform:translateY(25%);
+right:0;
 left:0;
 margin:0 auto;
 display: flex;
 justify-content: center;
 }
 .mainmenu img{
-    height: 250px;
-    width: auto;
+height: 150px;
+width: auto;
 }
 .mainmenu li{
-font-size: 20px;
-padding:10px;
+cursor: pointer;
+border-radius: 5px;
+font-size: 16px;
+padding:4px;
 background-color:var(--dblue);
 color: var(--bblue);
 margin:10px;
@@ -71,105 +180,101 @@ display: block;
 }
 .mainmenu li:hover{
 color: var(--dblue);
-background-color: var(--blue);
+    cursor: pointer;
+    background-color: var(--blue);
 }
 .form-signup
 {
-    position: fixed;
-    right: 0;
-    left:0;
-    margin:0 auto;
-    display: flex;
-    justify-content: center;
+position: fixed;
+right: 0;
+left:0;
+margin:0 auto;
+display: flex;
+justify-content: center;
 }
 .form-signup-container
 {
-    width: 30%;
-    min-width: 300px;
+width: 30%;
+min-width: 300px;
 }
 .form-signup-container ol
 {
-    border-radius: 5px;
-    background-color:var(--dblue);
-    margin:20px;
+border-radius: 5px;
+background-color:var(--dblue);
+margin:20px;
 }
 .form-signup-container li
 {
-    font-size: 14px;
-    padding:10px;
-    color: var(--bblue);
-    text-align: left;
-    display:flex;
-    justify-content: space-between;   
+font-size: 14px;
+padding:10px;
+color: var(--bblue);
+text-align: left;
+display:flex;
+justify-content: space-between;   
 }
 .signup-submit
 {
-    border-radius: 5px;
-    width:70%;
-    padding:10px;
-    background-color: var(--blue2);
+border-radius: 5px;
+width:70%;
+padding:10px;
+background-color: var(--blue2);
 }
 .signup-submit:hover
 {
-    cursor: pointer;
-    background-color: var(--blue);
+cursor: pointer;
+background-color: var(--blue);
 }
 .form-signup-container li:nth-child(4)
 {
-    justify-content: center;
+justify-content: center;
 }
 .form-signup-container input
 {
-    width: 70%;
+width: 70%;
 }
 .form-login
 {
-    position: fixed;
-    right: 0;
-    left:0;
-    margin:0 auto;
-    display: flex;
-    justify-content: center;
+display: flex;
+justify-content: center;
 }
 .form-login-container
 {
-    width: 30%;
-    min-width: 300px;
+width: 30%;
+min-width: 300px;
 }
 .form-login-container ol
 {
-    border-radius: 5px;
-    background-color:var(--dblue);
-    margin:20px;
+border-radius: 5px;
+background-color:var(--dblue);
 }
 .form-login-container li
 {
-    font-size: 14px;
-    padding:10px;
-    color: var(--bblue);
-    text-align: left;
-    display:flex;
-    justify-content: space-between;   
+font-size: 14px;
+padding:10px;
+color: var(--bblue);
+text-align: left;
+display:flex;
+justify-content: space-between;   
 }
 .login-submit
 {
-    border-radius: 5px;
-    width:70%;
-    padding:10px;
-    background-color: var(--blue2);
+border-radius: 5px;
+width:70%;
+padding:10px;
+background-color: var(--blue2);
 }
 .login-submit:hover
 {
-    cursor: pointer;
-    background-color: var(--blue);
+cursor: pointer;
+background-color: var(--blue);
 }
 .form-login-container li:nth-child(3)
 {
-    justify-content: center;
+justify-content: center;
 }
 .form-login-container input
 {
-    width: 70%;
+width: 60%;
 }
 .profile-div
 {
@@ -184,25 +289,24 @@ width: 100%;
 }
 .profile-container
 {
-    width: 100%;
+width: 100%;
 }
 .profile-div table{
-    background-color: var(--blue2);
-    color: var(--bblue);
-    text-align:center;
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 0;
+background-color: var(--blue2);
+color: var(--bblue);
+text-align:center;
+width: 100%;
+border-collapse: separate;
+border-spacing: 0 0;
 }
 .profile-div th
 {
-    background-color: var(--dblue);
+background-color: var(--dblue);
 }
 .profile-div td{
-    color:white;
-    width: calc(100%/5);
+color:white;
+width: calc(100%/5);
 }
-
 .my-poket
 {
 position:fixed;
@@ -250,4 +354,14 @@ box-shadow:1px 1px 1px 1px var(--dblue);
 .play-div td:active{
 background-color: var(--blue2);
 box-shadow:-1px -1px 1px 1px var(--dblue);
+}
+.backcurtain
+{
+    display:none;
+    position:fixed;
+    top:0;
+    height:100%;
+    width:100%;
+    background-color:black;
+    opacity:0.6;
 }

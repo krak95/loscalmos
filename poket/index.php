@@ -14,28 +14,36 @@ $ustat = $_SESSION['user_status'] ?? null;
 <title>Poket</title>
 </head>
 <body>
-    <div>
-    <?=$username?><br>
-    <?=$ustat?>
+<?php if (isset($username)){
+?><div class='sidebar'>
+<div class='friends-btn-div'>
+<button class='friends-btn-on' id ='friendson'><img src="img/friend.png" alt=""></button>
+<button class='friends-btn-off' id ='friendsoff'><img src="img/friend.png" alt=""></button>
+</div>
 
-    </div>
-<button id ='friends'>show friends</button>
-    <div class='friends'>
+<div class='friends'>
 <ol>
-    
 </ol>
-    </div>
+</div>
+</div><?php
+}
+?>
+
+
 <div class='screen'>
-    <div id='return' class='return'><img src="img/return.png" alt=""></div>
+<div id='return' class='return'>
+<img src="img/return.png" alt="">
+
+</div>
 <div class='mainmenu'>
 <div>
 <ol>
-<li><img src="img/user.png" alt=""></li>
+<li class='data-load' id='data-load'><img src="img/user.png" alt=""></li>
 <li>Play</li>
 <?php if(!isset($username)){
-    ?>
-    <li id='login'>Login</li>
-    <li id='signup'>Sign up</li><?php
+?>
+<li id='login'>Login</li>
+<li id='signup'>Sign up</li><?php
 }else{ ?>
 <li id='logout'>Logout</li>
 <li id='profile'>Profile</li>
@@ -46,32 +54,32 @@ $ustat = $_SESSION['user_status'] ?? null;
 </div>
 
 <div class='form-signup'>
-    <div class='form-signup-container'>
-        <ol>
-            <li><label for="uname">Username:</label><input id='uname'  type="text"></li>
-            <li><label for="email">Email:</label><input id='email'  type="text"></li>
-            <li><label for="pwd">Password:</label><input id='pwd'  type="password"></li>
-            <li><button class='signup-submit' id='signup-submit'>Sign up</button></li>
-        </ol>
-    </div>
+<div class='form-signup-container'>
+<ol>
+<li><label for="uname">Username:</label><input id='uname'  type="text"></li>
+<li><label for="email">Email:</label><input id='email'  type="text"></li>
+<li><label for="pwd">Password:</label><input id='pwd'  type="password"></li>
+<li><button class='signup-submit' id='signup-submit'>Sign up</button></li>
+</ol>
+</div>
 </div>
 <div class='form-login'>
-    <div class='form-login-container'>
-        <ol>
-            <li><label for="uname">Username:</label><input id='loguname'  type="text"></li>
-            <li><label for="pwd">Password:</label><input id='logpwd'  type="password"></li>
-            <li><button class='login-submit' id='login-submit'>Login</button></li>
-        </ol>
-    </div>
+<div class='form-login-container'>
+<ol>
+<li><label for="uname">Username:</label><input id='loguname'  type="text"></li>
+<li><label for="pwd">Password:</label><input id='logpwd'  type="password"></li>
+<li><button class='login-submit' id='login-submit'>Login</button></li>
+</ol>
+</div>
 </div>
 <div class='profile-div'>
-    <div class='profile-container'>
-        <table>
-            <tr>
-                <td></td>
-            </tr>
-        </table>
-    </div>
+<div class='profile-container'>
+<table>
+<tr>
+<td></td>
+</tr>
+</table>
+</div>
 </div>
 <!----------------------------------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------------------------------------------------------------------------------------------------------->
@@ -103,7 +111,9 @@ points:
 </div>
 
 </div>
+
 </div>
+<div class='backcurtain'></div>
 </body>
 </html>
 <script src='js/js.js'></script>
