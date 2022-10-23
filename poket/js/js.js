@@ -114,7 +114,7 @@ $('#friendsoff').hide();
 })
 })
 
-$('.chat-msg-box').scrollTop($('.chat-msg-box ol')[0].scrollHeight);
+
 $('#submit-chat').on('click',function(){
 let msg = $('#text-msg').val();
 let username = $('.chat-msg-box h3').html();

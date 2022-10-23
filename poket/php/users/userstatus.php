@@ -44,6 +44,7 @@ $('.chat-msg-box ol').html(data)
 }
 })
 const refreshchat = setInterval(() => {
+    $('.chat-msg-box').scrollTop($('.chat-msg-box ol')[0].scrollHeight);
     $.ajax({
     url:'php/chat/chat.php',
     type:'post',
@@ -53,7 +54,7 @@ const refreshchat = setInterval(() => {
     }
     })
 
-}, 700);
+}, 150);
 $('.backcurtain,.return').on('click',function(){
     $('.chat-box-div').css('display','none');
     clearInterval(refreshchat);
