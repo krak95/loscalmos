@@ -42,15 +42,7 @@ success:function(data){
 $('.chat-msg-box ol').html(data)
 }
 })
-
-
-let leng = 0;
-const ref = setInterval(() => {
-if(leng != $('.chat-msg-box li').length){
-    leng = $('.chat-msg-box li').length;
-    console.log(leng);
-    $('.chat-msg-box').scrollTop($('.chat-msg-box ol')[0].scrollHeight);
-    const refreshchat = setInterval(() => {
+const refreshchat = setInterval(() => {
     $.ajax({
     url:'php/chat/chat.php',
     type:'post',
@@ -60,6 +52,13 @@ if(leng != $('.chat-msg-box li').length){
     }
     })
 }, 250);
+
+let leng = 0;
+const ref = setInterval(() => {
+if(leng != $('.chat-msg-box li').length){
+    leng = $('.chat-msg-box li').length;
+    console.log(leng);
+    $('.chat-msg-box').scrollTop($('.chat-msg-box ol')[0].scrollHeight);
 }
 }, 150);
 
