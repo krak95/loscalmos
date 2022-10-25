@@ -15,14 +15,17 @@ while($row = $result->fetch_assoc()){
     $msg = $row['chat_msg'];
     $from = $row['user_from_id'];
     $to = $row['user_to_id'];
-    $data = $row['data'];
+    $datafetch = $row['data'];
+    $msg_seen = $row['msg_seen'];
+    $datestring = strtotime($datafetch);
+    $date = date("H:i:s d-M-Y",$datestring);
     if($from == $username_sender){
     ?>
-    <li class='sender'><p><?=$msg?></p></li>
+    <li class='sender'><p><?=$msg.'<span class="chat-date">às ' . $date. '</span>'?></p></li>
     <?php
     }else{
 ?>
-<li class='receiver'><?php echo '<a><span>'.$username_receiver.'</span>:</a>'.$msg ?></li>
+<li class='receiver'><?php echo '<a><span>'.$username_receiver.'</span>:</a>'.$msg. '<span class="chat-date">às ' . $date. '</span>'?></li>
 <?php
     }
 }

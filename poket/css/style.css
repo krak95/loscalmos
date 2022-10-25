@@ -27,7 +27,6 @@
 font-family:Arial, Helvetica, sans-serif;
 padding:0;
 margin:0;
-
 }
 body
 {
@@ -166,10 +165,20 @@ background-color: var(--blue2);
 display: block;
 margin:10px;
 }
+@keyframes friendblinker {
+    from { background:var(--blue2)}
+    to {background:var(--bblue)}
+}
+.friendsblinker
+{
+    animation-name:friendblinker;
+    animation-iteration-count:infinite;
+    animation-duration: .8s;
+}
 .friends li
 {
 padding:5px;
-border-bottom:1px solid var(--bblue);
+border-bottom:1px solid var(--dblue);
 display: flex;
 justify-content: space-between;
 }
@@ -188,9 +197,9 @@ height:auto;
 display:none;
 z-index: 1;
 justify-content: center;
-right: 5%;
 bottom:0;
-position:fixed;
+left: 5%;
+position:absolute;
 }
 .chat-box-container
 {
@@ -203,7 +212,7 @@ display:block;
 }
 .chat-msg-box
 {
-    font-size: 14px;
+font-size: 14px;
 overflow-y: scroll;
 border-radius: 5px;
 height: 350px;
@@ -215,11 +224,12 @@ background-color: white;
 .chat-msg-box li{
     display: flex;
     border-radius: 5px;
-    padding:5px;
+    padding:10px;
+    margin-top:4px;
 }
 .sender
 {   
-    transform: translateX(60%);
+    transform: translateX(50%);
     width: 60%;
     margin-top:5px;
     background-color:var(--bblue);
@@ -227,13 +237,18 @@ background-color: white;
 .receiver
 {
     width: 60%;
-    margin-top:5px;
     background-color:var(--blue);
 }
 .receiver a
 {
     margin-right: 4px;
     font-weight: bold;
+}
+.chat-date
+{
+    font-size:10px;
+    margin-left: 4px;
+    color:var(--dblue);
 }
 .chat-data-box
 {

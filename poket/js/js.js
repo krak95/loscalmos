@@ -130,10 +130,23 @@ data:{username:username,msg:msg},
 success:function(){
 setTimeout(() => {
 $('.chat-msg-box').scrollTop($('.chat-msg-box ol')[0].scrollHeight);
-
 }, 200);
 
 }
+})
+})
+
+$('#friendson').on('click',function(){
+$.ajax({
+    url:'php/chat/receive-msg.php',
+    dataType:'html',
+    type:'GET',
+    success: function(data){
+        let mail = data;
+        if(mail == 'true'){
+            $('.friends li').addClass('friendsblinker');
+        }
+    }
 })
 })
 

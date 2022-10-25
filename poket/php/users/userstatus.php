@@ -31,7 +31,8 @@ break;
 <script>
 $(document).ready(function(){
 $('.friends li').on('click',function(){
-let username = $(this).data('id');
+    let el = this;
+let username = $(el).data('id');
 $('.chat-box-div').css('display','flex');
 $('.chat-msg-box').prepend();
 $.ajax({
