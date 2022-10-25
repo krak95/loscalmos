@@ -27,6 +27,7 @@
 font-family:Arial, Helvetica, sans-serif;
 padding:0;
 margin:0;
+
 }
 body
 {
@@ -73,7 +74,7 @@ background-color: var(--bblue);
 .return:hover{
     cursor: pointer;
 transition:0.3s;
-box-shadow:0px 0px 3px 3px var(--dblue);
+box-shadow:0px 2px 2px gray;
 background-color: var(--blue);
 }
 .sidebar
@@ -106,7 +107,7 @@ border-bottom-right-radius:80px;
     cursor: pointer;
 transition:0.3s;
 color:var(--dblue);
-box-shadow:0px 0px 3px 3px var(--dblue);
+box-shadow:0px 2px 2px gray;
 background-color: var(--blue);
 }
 .friends-btn-off
@@ -123,7 +124,7 @@ border-bottom-right-radius:80px;
     cursor: pointer;
 transition:0.3s;
 color:var(--dblue);
-box-shadow:0px 0px 3px 3px var(--dblue);
+box-shadow:0px 2px 2px gray;
 background-color: var(--blue);
 }
 .friendsanime
@@ -276,6 +277,7 @@ margin:10px;
 border: 2px solid var(--dblue);
 text-align: center;
 display: block;    
+box-shadow:0px 2px 2px gray;
 }
 .mainmenu li:hover{
 color: var(--dblue);
@@ -449,11 +451,11 @@ width: 1000px;
 }
 .play-div td:hover{
 background-color: var(--blue);
-box-shadow:1px 1px 1px 1px var(--dblue);
+box-shadow:0px 2px 2px gray;
 }
 .play-div td:active{
 background-color: var(--blue2);
-box-shadow:-1px -1px 1px 1px var(--dblue);
+box-shadow:0px 2px 2px gray;
 }
 .backcurtain
 {
