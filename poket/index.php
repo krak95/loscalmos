@@ -3,6 +3,7 @@ include 'php/config/config.php';
 session_start();
 $username = $_SESSION['username'] ?? null;
 $ustat = $_SESSION['user_status'] ?? null;
+$msg = $_SESSION['msg'] ?? null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +16,8 @@ $ustat = $_SESSION['user_status'] ?? null;
 <title>Poket</title>
 </head>
 <body>
-<?php 
+<?php
+echo json_encode($msg);
 if(isset($username)){
 ?>
 <div class='sidebar'>

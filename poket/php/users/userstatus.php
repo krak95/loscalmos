@@ -10,11 +10,14 @@ $result = $sql->get_result();
 while ($row = $result->fetch_assoc()){
 $uname = $row['username'];
 $ustat = $row['user_status'];
+
+
 ?>
-<li data-id=<?=$uname?>>
+ 
+<li data-id=<?=$uname?> >
 
 <?php
-switch($ustat) {
+switch($ustat) {  
 case 0:
 $ustat = '0';
 echo '<p><span class="friendoff">offline</span> '.$uname.'</p>';
@@ -27,7 +30,9 @@ break;
 <img class='chat-btn' src="img/chat.png" alt="">
 </li>
 <?php
-} ?>
+}  ?>
+
+
 <script>
 $(document).ready(function(){
 $('.friends li').on('click',function(){
@@ -71,7 +76,29 @@ $('.backcurtain,.return').on('click',function(){
 })
 })
 
-
+const mailbox = setInterval(() => {
+    
+$('#friendson').ready(function(){
+$.ajax({
+    url:'php/chat/receive-msg.php',
+    dataType:'html',
+    type:'GET',
+    success: function(data){
+        let user = $('.friends li').data('id');
+        $(user).ready(function(){
+            alert(JSON.stringify(user));
+            let last = this;
+        let username = $(last).data('id');
+        if(data.includes(username) === true){
+            $(last).addClass('friendsblinker');
+                }else{
+                }
+    })
+            
+    }
+})
+})
+}, 200);
 
 
 //END OF DOCUMENT

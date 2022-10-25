@@ -172,8 +172,10 @@ margin:10px;
 .friendsblinker
 {
     animation-name:friendblinker;
-    animation-iteration-count:infinite;
     animation-duration: .8s;
+    animation-iteration-count:infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
 }
 .friends li
 {
