@@ -250,8 +250,7 @@ button:hover{
         100%{background-color:var(--greenlight);}
         }
 .login-btn-correct{
-    animation-name: green-blink-btn;
-    animation-duration: .5s;
+    box-shadow: 0 0 white, inset 80px 0 var(--lowgreen);
 }
 .user-div{
     display:none;

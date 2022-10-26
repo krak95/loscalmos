@@ -42,6 +42,7 @@ additemadmin();
 <title></title>
 </head>
 <body>
+
 <div style='display:none' class='sessionstat'><?= $_SESSION['username'] ?? null; ?></div>
 </div>
 <div class='topmenu'>
