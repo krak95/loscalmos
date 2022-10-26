@@ -137,24 +137,9 @@ $('.chat-msg-box').scrollTop($('.chat-msg-box ol')[0].scrollHeight);
 })
 
 
-$('#friendson').ready(function(){
-    $.ajax({
-        url:'php/chat/receive-msg.php',
-        dataType:'html',
-        type:'GET',
-        success: function(data){
-            $('.friends li').click(function(){
-                let last = this;
-            let username = $(last).data('id');
-            if(data.includes(username) === true){
-                $(last).addClass('friendsblinker');
-                    }else{
-                    }
-        })
-                
-        }
-    })
-    })
+
+
+
 
 
 //END OF DOCUMENT//
