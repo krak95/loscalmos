@@ -1,4 +1,3 @@
-
 <?php
 include '../config/config.php';
 session_start();
@@ -17,23 +16,39 @@ $sql1->bind_param('ss', $uname,$username);
 $sql1->execute();
 $result1 = $sql1->get_result();
 $nrows = $result1->num_rows;
-if($nrows > 0){
+if($nrows == 0){
+    $default= $con->prepare("INSERT INTO poket_chat (user_from_id,user_to_id,msg_seen) VALUES(?,?,1)");
+$default->bind_param('ss', $uname,$username);
+$default->execute();
+}
+
+
 while($row1 = $result1->fetch_assoc()){
 $notseen = $row1['msg_seen'];
 $to = $row1['user_to_id'];
 
+switch([$ustat, $notseen]){
+    case[0 , 0]:
+    echo '<li class="friendsblinker" data-id='.$uname.' >  <p> <span class="friendoff">Offline</span> '.$uname.'  </p>  </li>';
+    break;
+    case[1 , 0]:
+    echo '<li class="friendsblinker" data-id='.$uname.' >  <p> <span class="friendon">Online</span> '.$uname.'  </p>  </li>';
+    break;
+    case[0 , 1]:
+    echo '<li data-id='.$uname.' >  <p> <span class="friendoff">Offline</span> '.$uname.'  </p>  </li>';
+    break;
+    case[1 , 1]:
+    echo '<li data-id='.$uname.' >  <p> <span class="friendon">Online</span> '.$uname.'  </p>  </li>';
+    break;
+}
     ?>
-    <li <?php if($notseen == 0){?>class="friendsblinker"<?php ;} ?>  data-id=<?=$uname?> ><p> <?php if($ustat == 0){?> <span class="friendoff">offline</span><?=$uname?></p> <?php  ; }
-    else if($ustat == 1){ ?> <span class="friendon">online</span><?=$uname?></p> <?php ; } ?> <img class="chat-btn" src="img/chat.png" alt=""></li>
+    
+    
+
     <?php
     }
-
-    }
-    else{ ?>
-        <li data-id=<?=$uname?> ><p> <?php if($ustat == 0){?> <span class="friendoff">offline</span><?=$uname?></p> <?php  ; }
-        else if($ustat == 1){ ?> <span class="friendon">online</span><?=$uname?></p> <?php ; } ?> <img class="chat-btn" src="img/chat.png" alt=""></li><?php
+       
  }
-}
 ?>
 
 
