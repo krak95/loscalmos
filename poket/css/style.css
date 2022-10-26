@@ -179,15 +179,43 @@ margin:10px;
 }
 .friends li
 {
-padding:5px;
+padding:10px;
 border-bottom:1px solid var(--dblue);
 display: flex;
-justify-content: space-between;
+justify-content: start;
+align-items: center;
 }
 .friends li:hover
 {
 cursor: pointer;
 background-color: var(--blue);
+}
+
+.stock-green{
+    margin-right: 20px;
+    background-color:var(--greenlight);
+    padding:10px;
+    font-weight: bold;
+    border-radius:none;
+    border-radius: 100%;
+    border:2px solid var(--dblue);
+}
+.stock-yellow{
+    background-color:rgb(255, 255, 0);
+    padding:10px;
+    font-weight: bold;
+    border-radius:none;
+    border-radius: 100%;
+    border:2px solid var(--dblue);
+}
+.stock-red{
+    margin-right: 20px;
+    background-color:rgb(255, 0, 51);
+    padding:10px;
+    font-weight: bold;
+    border-radius:none;
+    border-radius: 100%;
+    border:2px solid var(--dblue);
 }
 .chat-btn
 {

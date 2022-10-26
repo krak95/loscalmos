@@ -29,16 +29,16 @@ $to = $row1['user_to_id'];
 
 switch([$ustat, $notseen]){
     case[0 , 0]:
-    echo '<li class="friendsblinker" data-id='.$uname.' >  <p> <span class="friendoff">Offline</span> '.$uname.'  </p>  </li>';
+    echo '<li class="friendsblinker" data-id='.$uname.' >  <p> <span class="friendoff"><div class="stock-red"></div></span> '.$uname.'  </p>  </li>';
     break;
     case[1 , 0]:
-    echo '<li class="friendsblinker" data-id='.$uname.' >  <p> <span class="friendon">Online</span> '.$uname.'  </p>  </li>';
+    echo '<li class="friendsblinker" data-id='.$uname.' >  <p> <span class="friendon"><div class="stock-green"></div></span> '.$uname.'  </p>  </li>';
     break;
     case[0 , 1]:
-    echo '<li data-id='.$uname.' >  <p> <span class="friendoff">Offline</span> '.$uname.'  </p>  </li>';
+    echo '<li data-id='.$uname.' >  <div class="stock-red"></div>'.$uname.'   </li>';
     break;
     case[1 , 1]:
-    echo '<li data-id='.$uname.' >  <p> <span class="friendon">Online</span> '.$uname.'  </p>  </li>';
+    echo '<li data-id='.$uname.' >  <div class="stock-green"></div> '.$uname.'   </li>';
     break;
 }
     ?>
