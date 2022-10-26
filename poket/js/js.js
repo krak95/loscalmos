@@ -88,14 +88,20 @@ $('.friends').addClass('friends-list-open');
 $.ajax({
 url:'php/users/userstatus.php',
 success:function(data){
+setTimeout(() => {
 $('.friends ol').html(data);
+    
+}, 5);
 }
 })
 var refresh = setInterval(() => {
 $.ajax({
 url:'php/users/userstatus.php',
 success:function(data){
-$('.friends ol').html(data);
+    setTimeout(() => {
+    $('.friends ol').html(data);
+        
+    }, 5);
 }
 })
 }, 3000);
