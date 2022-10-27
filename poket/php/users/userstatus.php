@@ -51,11 +51,14 @@ $(document).ready(function(){
 $('.friends li').on('click',function(){
 let el = this;
 const username = $(el).data('id');
+if ($('#'+username).length != 0){
+   return;
+}
 
 
 
 $('.chat-box-div').css('display','flex');
-$('.chat-box-div').prepend('<div class="chat-box-container"><button>m</button><button>c</button><div id='+username+' class="chat-msg-box"><h3>'+username+'</h3><ol class='+username+'></ol></div><div class="chat-data-box"><input type="text" id="text-msg'+username+'"><button id="submit-chat'+username+'">Send</button></div></div>');
+$('.chat-box-div').prepend('<div class="chat-box-container"><button>m</button><button>c</button><h3>'+username+'</h3><div id='+username+' class="chat-msg-box"><ol class='+username+'></ol></div><div class="chat-data-box"><input type="text" id="text-msg'+username+'"><button id="submit-chat'+username+'">Send</button></div></div>');
 $.ajax({
 url:'php/chat/msgseen.php',
 type:'post',
@@ -120,7 +123,6 @@ $('#'+username).scrollTop($('#'+username+' '+'ol')[0].scrollHeight);
 })
 })
 })
-
 //END OF DOCUMENT
 })
 </script>
