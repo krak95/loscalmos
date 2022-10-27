@@ -8,21 +8,92 @@
     <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
     <script src="jq.js"></script>
     <script src="jquery-ui.js"></script> 
-<script src="js.js" ></script>
+    <script src="js.js" ></script>
 <title>Document</title>
 </head>
 <body>
     <div class="mainbox">
-        <div id="draggable" class="draggable"></div>
+        <div class="container">
+            <div>1</div>
+            <div>2</div>
+            <div class="shown">3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
 
-        <div id="drophere" class="drophere"></div>
-    </div>
-    <div class="deck1" id="deck1">
 
     </div>
 </body>
 </html>
-<script>
 
-draggable();
+<script>
+    setInterval(() => {
+        
+  
+let show = $('.shown').show().css('display','block');
+let next = $('.shown').next().css('display','block');
+let prev = $('.shown').prev().css('display','block');
+$('.shown').next().addClass('next');
+$('.shown').prev().addClass('prev');
+$('.shown').prevAll().not('.prev').hide();
+$('.shown').nextAll().not('.next').hide();
+
+$(next).on('click',function(){
+   setTimeout(() => {
+    let el = this;
+    $(el).removeClass('next').addClass('shown');
+    $('.shown').css('display','block');
+    $('.shown').next().addClass('next').show();
+    $('.shown').prev().addClass('prev').show();
+   }, 0);
+    
+    $('.container div').removeClass('shown');
+    $('.container div').removeClass('next');
+    $('.container div').removeClass('prev');
+})
+$(prev).on('click',function(){
+   setTimeout(() => {
+    let el = this;
+    $(el).removeClass('prev').addClass('shown');
+    $('.shown').css('display','block');
+    $('.shown').next().addClass('next').show();
+    $('.shown').prev().addClass('prev').show();
+   }, 0);
+    
+    $('.container div').removeClass('shown');
+    $('.container div').removeClass('next');
+    $('.container div').removeClass('prev');
+})
+}, 1);
+
+
+
+/*let slideI = 1;
+showSlides(slideI);
+
+function plusSlides(n){
+    showSlides(slideI += n);
+
+}
+function currentSlide(n){
+    showSlides(slideI = n);
+}
+
+$('#prev').on('click',function(){
+    plusSlides(-1)
+})
+$('#next').on('click',function(){
+    plusSlides(1)
+})
+
+function showSlides(n){
+    let i;
+    $('.container div').hide();
+    let leng = $('.container div').length;
+    if(n > leng){slideI = 1;}
+    if(n < 1){slideI = leng;}
+    let fds = $('.container div')[slideI-1].style.display = 'block';
+}*/
+
 </script>
