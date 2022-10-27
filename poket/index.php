@@ -36,19 +36,6 @@ if(isset($username)){
 ?>
 
 <div class='chat-box-div'>
-<div class='chat-box-container'>
-
-<div class='chat-msg-box'>
-    <ol>
-    </ol>
-</div>
-
-<div class='chat-data-box'>
-<input type="text" id='text-msg'>
-<button id='submit-chat'>Send</button>
-</div>
-    
-</div>
 </div>
 
 

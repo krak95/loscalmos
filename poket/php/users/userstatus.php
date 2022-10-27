@@ -41,24 +41,21 @@ switch([$ustat, $notseen]){
     echo '<li data-id='.$uname.' >  <div class="stock-green"></div> '.$uname.'   </li>';
     break;
 }
-    ?>
-    
-    
-
-    <?php
     }
        
  }
 ?>
 
-
 <script>
 $(document).ready(function(){
 $('.friends li').on('click',function(){
 let el = this;
-let username = $(el).data('id');
+const username = $(el).data('id');
+
+
+
 $('.chat-box-div').css('display','flex');
-$('.chat-msg-box').prepend();
+$('.chat-box-div').prepend('<div class="chat-box-container"><button>m</button><button>c</button><div id='+username+' class="chat-msg-box"><h3>'+username+'</h3><ol class='+username+'></ol></div><div class="chat-data-box"><input type="text" id="text-msg'+username+'"><button id="submit-chat'+username+'">Send</button></div></div>');
 $.ajax({
 url:'php/chat/msgseen.php',
 type:'post',
@@ -71,7 +68,7 @@ url:'php/chat/chat.php',
 type:'post',
 data:{username:username},
 success:function(data){
-$('.chat-msg-box ol').html(data)
+$('.'+username).html(data);
 }
 })
 const refreshchat = setInterval(() => {
@@ -80,31 +77,49 @@ url:'php/chat/chat.php',
 type:'post',
 data:{username:username},
 success:function(data){
-$('.chat-msg-box ol').html(data)
+$('.'+username).html(data);
 }
 })
-}, 250);
+}, 50);
 
 let leng = 0;
 const ref = setInterval(() => {
 if(leng != $('.chat-msg-box li').length){
 leng = $('.chat-msg-box li').length;
 console.log(leng);
-$('.chat-msg-box').scrollTop($('.chat-msg-box ol')[0].scrollHeight);
+$('#'+username).scrollTop($('#'+username+' '+'ol')[0].scrollHeight);
 }
 }, 150);
 
 
 $('.backcurtain,.return').on('click',function(){
 $('.chat-box-div').css('display','none');
+$('.chat-box-div').children().remove();
 clearInterval(refreshchat);
 clearInterval(ref);
 })
+
+$('#text-msg'+username).on('keypress',function(e){
+    if(e.which == 13) {
+        $('#submit-chat'+username).click();
+    }
 })
 
+    $('#submit-chat'+username).on('click',function(){
+let msg = $('#text-msg'+username).val();
+$.ajax({
+url:'php/chat/sent-chat.php',
+type:'post',
+data:{username:username,msg:msg},
+success:function(){
+setTimeout(() => {
+$('#'+username).scrollTop($('#'+username+' '+'ol')[0].scrollHeight);
+}, 200);
 
-
-
+}
+})
+})
+})
 
 //END OF DOCUMENT
 })

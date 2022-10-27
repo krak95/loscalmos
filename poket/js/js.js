@@ -120,30 +120,6 @@ $('#friendsoff').hide();
 })
 })
 
-$('#text-msg').on('keypress',function(e){
-    if(e.which == 13) {
-        $('#submit-chat').click();
-    }
-})
-
-    $('#submit-chat').on('click',function(){
-let msg = $('#text-msg').val();
-let username = $('.chat-msg-box h3').html();
-$.ajax({
-url:'php/chat/sent-chat.php',
-type:'post',
-data:{username:username,msg:msg},
-success:function(){
-setTimeout(() => {
-$('.chat-msg-box').scrollTop($('.chat-msg-box ol')[0].scrollHeight);
-}, 200);
-
-}
-})
-})
-
-
-
 
 
 

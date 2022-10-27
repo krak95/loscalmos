@@ -9,7 +9,6 @@ $sql->bind_param('ssss',$username_sender,$username_receiver,$username_sender,$us
 $sql->execute();
 $result = $sql->get_result();
 ?>
-<h3><?=$username_receiver?></h3>
 <?php
 while($row = $result->fetch_assoc()){
     $msg = $row['chat_msg'];
@@ -21,11 +20,13 @@ while($row = $result->fetch_assoc()){
     $date = date("H:i:s d-M-Y",$datestring);
     if($from == $username_sender){
     ?>
+ 
     <li class='sender'><p><?=$msg.'<span class="chat-date">às ' . $date. '</span>'?></p></li>
     <?php
     }else{
 ?>
 <li class='receiver'><?php echo '<a><span>'.$username_receiver.'</span>:</a>'.$msg. '<span class="chat-date">às ' . $date. '</span>'?></li>
+
 <?php
     }
 }
