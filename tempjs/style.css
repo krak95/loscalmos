@@ -11,8 +11,24 @@
     padding:0;
     margin:0;
 }
+body{
+}
 .mainbox
 {
+background-repeat: no-repeat !important;
+background-size:cover !important;
+background-position:center !important;
+z-index: -2;
+opacity: 0.3;
+height: 100vh;
+width: 100%;
+position: fixed;
+align-items: center;
+margin:0;
+}
+.wrapper
+{
+  
 height: 100vh;
 width: 100%;
 position: fixed;
@@ -22,55 +38,45 @@ align-items: center;
 }
 .container
 {
+z-index: 1;
 position: fixed;
 display: flex;
 justify-content: center;
-
-
+align-self: center;
 }
 .container div
 {
   background-color: var(--bblue);
-  padding:20px;
   display:none;
   transition: .5s !important;
-  margin:6px;
   border:1px solid black;
+
+}
+.container img
+{
+float: left;
+width: 150px;
+height: 250px;
+border:2px solid crimson;
+box-shadow: 0px 0px 10px 2px crimson;
+object-fit: cover;
 }
 .shown{
   background-color: var(--blue) !important;
-  transform:scale(1.2) !important;
-  transition: 0.5s !important;
+  transform:scale(1.5) !important;
+  transition: 0.3s !important;
   display:block !important;
+  z-index: 1;
 }
 .prev
 {
-transition: 0.5s;
+transition: 0.3s;
 display:block !important;
-opacity: 0.5;
+opacity: 0.6;
 }
 .next
 {
-  transition: 0.5s;
+transition: 0.3s;
 display:block !important;
-opacity: 0.5;
-}
-a
-{
-  position: relative;
-  margin:20px;
-  margin-top: 120px;
-  padding:5px;
-  background-color: var(--dblue);
-}
-button
-{
-  padding:10px;
-  background-color: var(--blue);
-  margin-top:155px;
-}
-button:hover
-{
-  background-color: var(--bblue);
-  cursor: pointer;
+opacity: 0.6;
 }

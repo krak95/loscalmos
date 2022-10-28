@@ -12,22 +12,28 @@
 <title>Document</title>
 </head>
 <body>
-    <div class="mainbox">
-        <div class="container">
-            <div>1</div>
-            <div>2</div>
-            <div class="shown">3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-        </div>
-
-
+    <div class="mainbox" id="mainbox">
     </div>
+    <div class="wrapper">
+    <div class="container">
+            <div class="shown"><img src="img/akatsuki/deidaraaka.webp" alt="img/akatsuki/background/deidaraback.webp"></div>
+            <div><img src="img/akatsuki/hidanaka.webp" alt="img/akatsuki/background/hidanback.jpg"></div>
+            <div><img src="img/akatsuki/itachiaka.jpg" alt="img/akatsuki/background/itachiback.jpg"></div>
+            <div><img src="img/akatsuki/kakuzuaka.png" alt="img/akatsuki/background/kakuzuback.jpg"></div>
+            <div><img src="img/akatsuki/kisameaka.webp" alt="img/akatsuki/background/kisameback.webp"></div>
+            <div><img src="img/akatsuki/konanaka.jpg" alt="img/akatsuki/background/konanback.webp"></div>
+            <div><img src="img/akatsuki/painaka.jpg" alt="img/akatsuki/background/painback.jpg"></div>
+            <div><img src="img/akatsuki/sasoriaka.webp" alt="img/akatsuki/background/sasoriback.jpg"></div>
+            <div><img src="img/akatsuki/tobiaka.webp" alt="img/akatsuki/background/tobiback.jpg"></div>
+            <div><img src="img/akatsuki/zetsuaka.jpg" alt="img/akatsuki/background/zetsuback.jpg"></div>
+        </div>
+    </div>
+
 </body>
 </html>
 
 <script>
+    
     setInterval(() => {
         
   
@@ -65,7 +71,12 @@ $(prev).on('click',function(){
     $('.container div').removeClass('next');
     $('.container div').removeClass('prev');
 })
-}, 1);
+
+let backG = $('.shown img').attr("alt",)
+let bodyG = document.getElementById('mainbox');
+let backG1 = bodyG.style.background = "url("+backG+")";
+
+}, 0);
 
 
 
