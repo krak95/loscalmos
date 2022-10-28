@@ -25,7 +25,7 @@ while($row = $result->fetch_assoc()){
     <?php
     }else{
 ?>
-<li class='receiver'><?php echo '<a><span>'.$username_receiver.'</span>:</a>'.$msg. '<span class="chat-date">às ' . $date. '</span>'?></li>
+<li class='receiver'><?php echo '<a><span>'.$username_receiver.'</span>:</a><p>'.$msg. '<span class="chat-date">às ' . $date. '</span></p>'?></li>
 
 <?php
     }
