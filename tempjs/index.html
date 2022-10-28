@@ -1,110 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
-    <script src="jq.js"></script>
-    <script src="jquery-ui.js"></script> 
-    <script src="js.js" ></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+<script src="jq.js"></script>
+<script src="jquery-ui.js"></script> 
+<!--<script src="js.js" ></script>-->
 <title>Document</title>
 </head>
 <body>
-    <div class="mainbox" id="mainbox">
-    </div>
-    <div class="wrapper">
-    <div class="container">
-            <div class="shown"><img draggable="false" src="img/akatsuki/deidaraaka.webp" alt="img/akatsuki/background/deidaraback.webp"></div>
-            <div><img draggable="false" src="img/akatsuki/hidanaka.webp" alt="img/akatsuki/background/hidanback.jpg"></div>
-            <div><img draggable="false" src="img/akatsuki/itachiaka.jpg" alt="img/akatsuki/background/itachiback.webp"></div>
-            <div><img draggable="false" src="img/akatsuki/kakuzuaka.png" alt="img/akatsuki/background/kakuzuback.jpg"></div>
-            <div><img draggable="false" src="img/akatsuki/kisameaka.webp" alt="img/akatsuki/background/kisameback.webp"></div>
-            <div><img draggable="false" src="img/akatsuki/konanaka.jpg" alt="img/akatsuki/background/konanback.webp"></div>
-            <div><img draggable="false" src="img/akatsuki/painaka.jpg" alt="img/akatsuki/background/painback.jpg"></div>
-            <div><img draggable="false" src="img/akatsuki/sasoriaka.webp" alt="img/akatsuki/background/sasoriback.jpg"></div>
-            <div><img draggable="false" src="img/akatsuki/tobiaka.webp" alt="img/akatsuki/background/tobiback.jpg"></div>
-            <div><img draggable="false" src="img/akatsuki/zetsuaka.jpg" alt="img/akatsuki/background/zetsuback.jpg"></div>
-        </div>
-    </div>
-
+<div class="mainbox" id="mainbox">
+</div>
+<div class="showbox">
+<div class="wrapper">
+<div class="container">
+<div ><img draggable="false" src="img/akatsuki/deidaraaka.webp" alt="img/akatsuki/background/deidaraback.webp"><h3>Deidara</h3></div>
+<div ><img draggable="false" src="img/akatsuki/hidanaka.webp" alt="img/akatsuki/background/hidanback.jpg"><h3>Hidan</h3></div>
+<div ><img draggable="false" src="img/akatsuki/itachiaka.jpg" alt="img/akatsuki/background/itachiback.webp"><h3>Itachi</h3></div>
+<div><img draggable="false" src="img/akatsuki/kakuzuaka.png" alt="img/akatsuki/background/kakuzuback.jpg"><h3>Kakuzu</h3></div>
+<div><img draggable="false" src="img/akatsuki/kisameaka.webp" alt="img/akatsuki/background/kisameback.webp"><h3>Kisame</h3></div>
+<div><img draggable="false" src="img/akatsuki/konanaka.jpg" alt="img/akatsuki/background/konanback.webp"><h3>Konan</h3></div>
+<div><img draggable="false" src="img/akatsuki/painaka.jpg" alt="img/akatsuki/background/painback.jpg"><h3>Pain</h3></div>
+<div><img draggable="false" src="img/akatsuki/sasoriaka.webp" alt="img/akatsuki/background/sasoriback.jpg"><h3>Sasori</h3></div>
+<div><img draggable="false" src="img/akatsuki/tobiaka.webp" alt="img/akatsuki/background/tobiback.jpg"><h3>Tobi</h3></div>
+<div><img  draggable="false" src="img/akatsuki/zetsuaka.jpg" alt="img/akatsuki/background/zetsuback.jpg"><h3>Zetsu</h3></div>
+</div>
+</div>
+</div>
 </body>
 </html>
-
 <script>
-    
-    setInterval(() => {
-        
-  
-let show = $('.shown').show().css('display','flex');
-let next = $('.shown').next().css('display','flex');
-let prev = $('.shown').prev().css('display','flex');
-$('.shown').next().addClass('next');
-$('.shown').prev().addClass('prev');
-$('.shown').prevAll().not('.prev').hide();
-$('.shown').nextAll().not('.next').hide();
+    $(document).ready(function(){
+        document.getElementById('mainbox').style.background = "url('img/akatsuki/background/akatsuki.jpg')";
+    })
+    $('.container div').on('click',function(){
 
-$(next).on('click',function(){
-   setTimeout(() => {
-    let el = this;
-    $(el).removeClass('next').addClass('shown');
-    $('.shown').css('display','flex');
-    $('.shown').next().addClass('next').show();
-    $('.shown').prev().addClass('prev').show();
-   }, 0);
-    
-    $('.container div').removeClass('shown');
-    $('.container div').removeClass('next');
-    $('.container div').removeClass('prev');
-})
-$(prev).on('click',function(){
-   setTimeout(() => {
-    let el = this;
-    $(el).removeClass('prev').addClass('shown');
-    $('.shown').css('display','flex');
-    $('.shown').next().addClass('next').show();
-    $('.shown').prev().addClass('prev').show();
-   }, 0);
-    
-    $('.container div').removeClass('shown');
-    $('.container div').removeClass('next');
-    $('.container div').removeClass('prev');
-})
+$('.container div').removeClass('shown');
+$('.container h3').hide();
+setTimeout(() => {
+$(this).addClass('shown');
+setTimeout(() => {
+    $('.shown h3').show();
+}, 500);
 
+$('.showbox>img').remove();
 let backG = $('.shown img').attr("alt",)
 let bodyG = document.getElementById('mainbox');
 let backG1 = bodyG.style.background = "url("+backG+")";
-
 }, 0);
-
-
-
-/*let slideI = 1;
-showSlides(slideI);
-
-function plusSlides(n){
-    showSlides(slideI += n);
-
-}
-function currentSlide(n){
-    showSlides(slideI = n);
-}
-
-$('#prev').on('click',function(){
-    plusSlides(-1)
-})
-$('#next').on('click',function(){
-    plusSlides(1)
 })
 
-function showSlides(n){
-    let i;
-    $('.container div').hide();
-    let leng = $('.container div').length;
-    if(n > leng){slideI = 1;}
-    if(n < 1){slideI = leng;}
-    let fds = $('.container div')[slideI-1].style.display = 'flex';
-}*/
-
-</script>
+</script> 
