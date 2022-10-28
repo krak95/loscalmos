@@ -16,16 +16,16 @@
     </div>
     <div class="wrapper">
     <div class="container">
-            <div class="shown"><img src="img/akatsuki/deidaraaka.webp" alt="img/akatsuki/background/deidaraback.webp"></div>
-            <div><img src="img/akatsuki/hidanaka.webp" alt="img/akatsuki/background/hidanback.jpg"></div>
-            <div><img src="img/akatsuki/itachiaka.jpg" alt="img/akatsuki/background/itachiback.jpg"></div>
-            <div><img src="img/akatsuki/kakuzuaka.png" alt="img/akatsuki/background/kakuzuback.jpg"></div>
-            <div><img src="img/akatsuki/kisameaka.webp" alt="img/akatsuki/background/kisameback.webp"></div>
-            <div><img src="img/akatsuki/konanaka.jpg" alt="img/akatsuki/background/konanback.webp"></div>
-            <div><img src="img/akatsuki/painaka.jpg" alt="img/akatsuki/background/painback.jpg"></div>
-            <div><img src="img/akatsuki/sasoriaka.webp" alt="img/akatsuki/background/sasoriback.jpg"></div>
-            <div><img src="img/akatsuki/tobiaka.webp" alt="img/akatsuki/background/tobiback.jpg"></div>
-            <div><img src="img/akatsuki/zetsuaka.jpg" alt="img/akatsuki/background/zetsuback.jpg"></div>
+            <div class="shown"><img draggable="false" src="img/akatsuki/deidaraaka.webp" alt="img/akatsuki/background/deidaraback.webp"></div>
+            <div><img draggable="false" src="img/akatsuki/hidanaka.webp" alt="img/akatsuki/background/hidanback.jpg"></div>
+            <div><img draggable="false" src="img/akatsuki/itachiaka.jpg" alt="img/akatsuki/background/itachiback.webp"></div>
+            <div><img draggable="false" src="img/akatsuki/kakuzuaka.png" alt="img/akatsuki/background/kakuzuback.jpg"></div>
+            <div><img draggable="false" src="img/akatsuki/kisameaka.webp" alt="img/akatsuki/background/kisameback.webp"></div>
+            <div><img draggable="false" src="img/akatsuki/konanaka.jpg" alt="img/akatsuki/background/konanback.webp"></div>
+            <div><img draggable="false" src="img/akatsuki/painaka.jpg" alt="img/akatsuki/background/painback.jpg"></div>
+            <div><img draggable="false" src="img/akatsuki/sasoriaka.webp" alt="img/akatsuki/background/sasoriback.jpg"></div>
+            <div><img draggable="false" src="img/akatsuki/tobiaka.webp" alt="img/akatsuki/background/tobiback.jpg"></div>
+            <div><img draggable="false" src="img/akatsuki/zetsuaka.jpg" alt="img/akatsuki/background/zetsuback.jpg"></div>
         </div>
     </div>
 
@@ -37,9 +37,9 @@
     setInterval(() => {
         
   
-let show = $('.shown').show().css('display','block');
-let next = $('.shown').next().css('display','block');
-let prev = $('.shown').prev().css('display','block');
+let show = $('.shown').show().css('display','flex');
+let next = $('.shown').next().css('display','flex');
+let prev = $('.shown').prev().css('display','flex');
 $('.shown').next().addClass('next');
 $('.shown').prev().addClass('prev');
 $('.shown').prevAll().not('.prev').hide();
@@ -49,7 +49,7 @@ $(next).on('click',function(){
    setTimeout(() => {
     let el = this;
     $(el).removeClass('next').addClass('shown');
-    $('.shown').css('display','block');
+    $('.shown').css('display','flex');
     $('.shown').next().addClass('next').show();
     $('.shown').prev().addClass('prev').show();
    }, 0);
@@ -62,7 +62,7 @@ $(prev).on('click',function(){
    setTimeout(() => {
     let el = this;
     $(el).removeClass('prev').addClass('shown');
-    $('.shown').css('display','block');
+    $('.shown').css('display','flex');
     $('.shown').next().addClass('next').show();
     $('.shown').prev().addClass('prev').show();
    }, 0);
@@ -104,7 +104,7 @@ function showSlides(n){
     let leng = $('.container div').length;
     if(n > leng){slideI = 1;}
     if(n < 1){slideI = leng;}
-    let fds = $('.container div')[slideI-1].style.display = 'block';
+    let fds = $('.container div')[slideI-1].style.display = 'flex';
 }*/
 
 </script>
