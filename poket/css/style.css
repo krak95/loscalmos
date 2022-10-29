@@ -249,13 +249,29 @@ position:absolute;
 }
 .chat-box-container
 {
-    position: relative;
+position: relative;
 border-radius: 5px;
 border:2px solid black;
 padding:2px;
 width: 300px;
 background-color: var(--dblue);
 display:block;
+}
+.chatheader
+{
+    margin:10px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.chatheader li
+{
+    display: flex;
+    align-items: center;
+}
+.chat-box-container img{
+    height: 30px !important;
+    width: auto !important;
 }
 .chat-msg-box
 {
@@ -264,6 +280,7 @@ overflow-y: scroll;
 border-radius: 5px;
 height: 350px;
 background-color: white;
+text-align: left;
 }
 .chat-msg-box ol{
     margin:10px;
@@ -279,6 +296,7 @@ background-color: white;
 {
 word-break: break-all;
 }
+
 .sender
 {   
     transform: translateX(50%);
@@ -363,14 +381,16 @@ justify-content: center;
 }
 .form-signup-container
 {
-width: 30%;
-min-width: 300px;
+width: 60%;
+min-width: 400px;
+max-width: 600px;
+
 }
 .form-signup-container ol
 {
 border-radius: 5px;
 background-color:var(--dblue);
-margin:20px;
+padding:10px;
 }
 .form-signup-container li
 {
@@ -393,13 +413,18 @@ background-color: var(--blue2);
 cursor: pointer;
 background-color: var(--blue);
 }
-.form-signup-container li:nth-child(4)
+.form-signup-container li:nth-child(1)
+{
+justify-content: center;
+}
+.form-signup-container li:nth-child(5)
 {
 justify-content: center;
 }
 .form-signup-container input
 {
-width: 70%;
+    max-width: 250px;
+width: 80%;
 }
 .form-login
 {
@@ -408,6 +433,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 height: 100%;
+max-width: 300px;
 }
 .form-login-container
 {

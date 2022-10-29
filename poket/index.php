@@ -65,6 +65,7 @@ if(isset($username)){
 <div class='form-signup'>
 <div class='form-signup-container'>
 <ol>
+<li><h3>Sign up</h3></li>
 <li><label for="uname">Username:</label><input id='uname'  type="text"></li>
 <li><label for="email">Email:</label><input id='email'  type="text"></li>
 <li><label for="pwd">Password:</label><input id='pwd'  type="password"></li>

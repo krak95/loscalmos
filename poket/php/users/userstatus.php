@@ -50,6 +50,9 @@ switch([$ustat, $notseen]){
 $(document).ready(function(){
 $('.friends li').on('click',function(){
 let el = this;
+let div = $(el).children();
+let status = $(div).first().attr('class');
+console.log(status)
 const username = $(el).data('id');
 if ($('#'+username).length != 0){
    return;
@@ -58,7 +61,7 @@ if ($('#'+username).length != 0){
 
 
 $('.chat-box-div').css('display','flex');
-$('.chat-box-div').prepend('<div class="chat-box-container"><button>m</button><button>c</button><h3>'+username+'</h3><div id='+username+' class="chat-msg-box"><ol class='+username+'></ol></div><div class="chat-data-box"><input type="text" id="text-msg'+username+'"><button id="submit-chat'+username+'">Send</button></div></div>');
+$('.chat-box-div').prepend('<div class="chat-box-container"><ol class="chatheader"><li><img src="img/friend.png"><div class="'+status+'" class="stock-red"></div><h3>'+username+'</h3></li><li><button>m</button><button>c</button></li></ol><div id='+username+' class="chat-msg-box"><ol class='+username+'></ol></div><div class="chat-data-box"><input type="text" id="text-msg'+username+'"><button id="submit-chat'+username+'">Send</button></div></div>');
 $.ajax({
 url:'php/chat/msgseen.php',
 type:'post',

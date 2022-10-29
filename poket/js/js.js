@@ -71,7 +71,7 @@ $('#login-submit').text('Login');
 })
 })
 
-
+/*
 function timedlogout(){
 $('body').mouseleave(function(e){
 if($('.timedlogout').length == 0){ 
@@ -101,7 +101,7 @@ $(location).prop('href','');
 }
 logout();
 }
-timedlogout()
+timedlogout()*/
 
 $('#profile').on('click',function(){
 $('.mainmenu').hide();
@@ -166,7 +166,7 @@ $('#friendsoff').hide();
 })
 
 function endsession(){
-$(window).on('beforeunload', function(event){
+$(window).on('beforeunload', function(){
 $('.screen').append('<div class="closesession">Closing session...</>')
 $('#logout').click();
 });
