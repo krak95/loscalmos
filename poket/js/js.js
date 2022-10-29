@@ -4,6 +4,8 @@ $('.form-signup').hide();
 $('.form-login').hide();
 $('.profile-div').hide();
 $('#friendsoff').hide();
+$('.success').css('display','none');
+$('.error').css('display','none');
 
     $('#return').on('click',function(){
 $('.mainmenu').show();
@@ -35,6 +37,12 @@ alert('new user');
 })
 })
 
+$('#loguname,#logpwd').on('keypress', function(event){
+    if (event.key === "Enter") {
+    event.preventDefault();
+    $('#login-submit').click();
+    }
+})
     $('#login-submit').on('click',function(){
 var username = $('#loguname').val();
 var user_pwd = $('#logpwd').val();
@@ -42,9 +50,23 @@ $.ajax({
 type:'post',
 url:'php/users/login.php',
 data:{username:username,user_pwd:user_pwd},
-success: function(){
-alert('connect');
-$(location).prop('href','');
+success: function(data){console.log(data)
+    if(data == 'connect'){
+        $('#login-submit').addClass('success');
+        $('#login-submit').text('Success');
+        //$('.success').css('display','flex');
+        setTimeout(() => {
+        $(location).prop('href','');
+        }, 1500);
+    }
+    if(data == 'connection error'){
+        $('#login-submit').addClass('error');
+        $('#login-submit').text('Error');
+        setTimeout(() => {
+            $('#login-submit').removeClass('error');
+            $('#login-submit').text('Login');
+            }, 1500);
+    }
 }
 })
 })

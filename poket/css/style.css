@@ -36,16 +36,32 @@ button
 {
 border: 1px solid black;
 }
+button:focus{
+    outline:none;
+}
 input{
 border: 1px solid black;
 outline: none;
 border-radius: 5px;
 background-color: var(--bblue);
 text-align: center;
+padding:4px;
 }
 input:focus{
 background-color:whitesmoke;
 outline:none;
+}
+label
+{
+    padding:4px;
+    align-items: center !important;
+}
+.screen
+{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
 }
 .return
 {
@@ -73,7 +89,7 @@ background-color: var(--bblue);
 .return:hover{
     cursor: pointer;
 transition:0.3s;
-box-shadow:0px 2px 2px gray;
+box-shadow:0px 6px 8px 2px var(--grey);
 background-color: var(--blue);
 }
 .sidebar
@@ -106,7 +122,7 @@ border-bottom-right-radius:80px;
     cursor: pointer;
 transition:0.3s;
 color:var(--dblue);
-box-shadow:0px 2px 2px gray;
+box-shadow:0px 6px 8px 2px var(--grey);
 background-color: var(--blue);
 }
 .friends-btn-off
@@ -123,7 +139,7 @@ border-bottom-right-radius:80px;
     cursor: pointer;
 transition:0.3s;
 color:var(--dblue);
-box-shadow:0px 2px 2px gray;
+box-shadow:0px 6px 8px 2px var(--grey);
 background-color: var(--blue);
 }
 .friendsanime
@@ -306,7 +322,6 @@ background-color: var(--blue);
 }
 
 .mainmenu{
-transform:translateY(25%);
 right:0;
 left:0;
 margin:0 auto;
@@ -328,7 +343,7 @@ margin:10px;
 border: 2px solid var(--dblue);
 text-align: center;
 display: block;    
-box-shadow:0px 2px 2px gray;
+box-shadow:0px 2px 6px 2px var(--grey);
 }
 .mainmenu li:hover{
 color: var(--dblue);
@@ -388,49 +403,81 @@ width: 70%;
 }
 .form-login
 {
-transform:translateY(25%);
+width: 100%;
 display: flex;
 justify-content: center;
+align-items: center;
+height: 100%;
 }
 .form-login-container
 {
-width: 30%;
+width: 60%;
 min-width: 300px;
 }
 .form-login-container ol
 {
+box-shadow:0px 2px 6px 2px var(--grey);
 border-radius: 5px;
+padding:10px;
 background-color:var(--dblue);
 }
 .form-login-container li
 {
-font-size: 14px;
+font-size:14px;
 padding:10px;
 color: var(--bblue);
-text-align: left;
 display:flex;
-justify-content: space-between;   
+justify-content:space-between;
+margin:10px;
+padding:10px;
+}
+.form-login-container li:nth-child(1)
+{
+justify-content: center;
+}
+.form-login-container li:nth-child(4)
+{
+justify-content: center;
 }
 .login-submit
 {
 border-radius: 5px;
 width:70%;
 padding:10px;
-background-color: var(--blue2);
+background-color:var(--blue);
+transition: linear .8s;
 }
 .login-submit:hover
 {
+color: var(--dblue);
 cursor: pointer;
-background-color: var(--blue);
+box-shadow: 0 0 white, inset 100vh 0 white;
+transition: linear .8s;
 }
-.form-login-container li:nth-child(3)
-{
-justify-content: center;
-}
+
 .form-login-container input
 {
-width: 60%;
+width: 70%;
 }
+.success
+{
+    background-color: var(--lowgreen);
+    border-radius: 5px;
+    justify-content: center !important;
+    color:var(--dblue) !important;
+    box-shadow: 0 0 var(--lowgreen), inset 100vh 0 var(--lowgreen);
+    transition: ease-in-out .8s;
+}
+.error
+ {
+    background-color: crimson;
+    color:var(--bblue) !important;
+    border-radius: 5px;
+    padding:10px;
+    justify-content: center !important;
+    box-shadow: 0 0 crimson, inset 100vh 0 crimson;
+    transition: ease-in-out .8s;
+ }
 .profile-div
 {
 position: fixed;
@@ -439,8 +486,7 @@ right: 0;
 margin:0 auto;
 display:flex;
 justify-content: center;
-top:100px;
-width: 100%;
+width: 80%;
 }
 .profile-container
 {
@@ -504,11 +550,11 @@ width: 1000px;
 }
 .play-div td:hover{
 background-color: var(--blue);
-box-shadow:0px 2px 2px gray;
+box-shadow:0px 6px 8px 2px var(--grey);
 }
 .play-div td:active{
 background-color: var(--blue2);
-box-shadow:0px 2px 2px gray;
+box-shadow:0px 6px 8px 2px var(--grey);
 }
 .backcurtain
 {

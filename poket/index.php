@@ -75,9 +75,12 @@ if(isset($username)){
 <div class='form-login'>
 <div class='form-login-container'>
 <ol>
+<li><h3>Login</h3></li>
 <li><label for="uname">Username:</label><input id='loguname'  type="text"></li>
 <li><label for="pwd">Password:</label><input id='logpwd'  type="password"></li>
 <li><button class='login-submit' id='login-submit'>Login</button></li>
+<li class='success'>Success</li>
+<li class='error'>Error</li>
 </ol>
 </div>
 </div>

@@ -7,8 +7,8 @@ $user_pwd=$_POST['user_pwd'];
 $sql= $con->prepare("SELECT * FROM users WHERE username = ? AND user_pwd = ?");
 $sql->bind_param('ss',$username,$user_pwd);
 $sql->execute();
-$sql->store_result();
-if(!$sql == false){
+$result = $sql->get_result()->fetch_row()[0]??null;
+if($result != null){
     echo 'connect';
     session_start();
     $_SESSION['username'] = $username;
@@ -26,4 +26,6 @@ $ustat = $row['user_status'];
 $_SESSION['user_status'] = $ustat;
 }
 }
+}else{
+    echo 'connection error';
 }
