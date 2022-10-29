@@ -29,16 +29,16 @@ $to = $row1['user_to_id'];
 
 switch([$ustat, $notseen]){
     case[0 , 0]:
-    echo '<li class="friendsblinker" data-id='.$uname.' >  <p> <span class="friendoff"><div class="stock-red"></div></span> '.$uname.'  </p>  </li>';
+    echo '<li class="friendsblinker" data-id='.$uname.' >  <p> <span class="friendoff"><div class="stock-red"></div>&nbsp&nbsp</span> '.$uname.'  </p>  </li>';
     break;
     case[1 , 0]:
-    echo '<li class="friendsblinker" data-id='.$uname.' >  <p> <span class="friendon"><div class="stock-green"></div></span> '.$uname.'  </p>  </li>';
+    echo '<li class="friendsblinker" data-id='.$uname.' >  <p> <span class="friendon"><div class="stock-green"></div>&nbsp&nbsp</span> '.$uname.'  </p>  </li>';
     break;
     case[0 , 1]:
-    echo '<li data-id='.$uname.' >  <div class="stock-red"></div>'.$uname.'   </li>';
+    echo '<li data-id='.$uname.' >  <div class="stock-red"></div>&nbsp&nbsp'.$uname.'   </li>';
     break;
     case[1 , 1]:
-    echo '<li data-id='.$uname.' >  <div class="stock-green"></div> '.$uname.'   </li>';
+    echo '<li data-id='.$uname.' >  <div class="stock-green"></div>&nbsp&nbsp '.$uname.'   </li>';
     break;
 }
     }
@@ -61,7 +61,7 @@ if ($('#'+username).length != 0){
 
 
 $('.chat-box-div').css('display','flex');
-$('.chat-box-div').prepend('<div class="chat-box-container"><ol class="chatheader"><li><img src="img/friend.png"><div class="'+status+'" class="stock-red"></div><h3>'+username+'</h3></li><li><button>m</button><button>c</button></li></ol><div id='+username+' class="chat-msg-box"><ol class='+username+'></ol></div><div class="chat-data-box"><input type="text" id="text-msg'+username+'"><button id="submit-chat'+username+'">Send</button></div></div>');
+$('.chat-box-div').prepend('<div class="chat-box-container"><ol class="chatheader"><li><div class="'+status+'" class="stock-red"></div>&nbsp<img src="img/friend.png">&nbsp<h3>'+username+'</h3></li><li><button>m</button><button>c</button></li></ol><div id='+username+' class="chat-msg-box"><ol class='+username+'></ol></div><div class="chat-data-box"><input type="text" id="text-msg'+username+'"><button id="submit-chat'+username+'">Send</button></div></div>');
 $.ajax({
 url:'php/chat/msgseen.php',
 type:'post',
