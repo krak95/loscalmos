@@ -17,6 +17,7 @@ body{
 }
 .mainbox
 {
+    filter: blur(6px);
 background-repeat: no-repeat !important;
 background-size:cover !important;
 background-position:center !important;
@@ -67,8 +68,6 @@ max-width: 100%;
 max-width: 100%;
 height: 196px;
 width: 100px;
-border:2px solid crimson;
-box-shadow: 0px 0px 4px 2px crimson;
 object-fit: cover;
 }
 .container h3
@@ -95,11 +94,21 @@ animation: shaker 0.4s;
     opacity: 1;
     overflow-y: auto;
     position: absolute;
+    transition: 0.6s;
 }
 .titleimg:hover
 {
+    filter: blur(2px);
     opacity: 0.6 !important;
+    transform:scale(1) ;
+    transition: 0.6s;
+
 } 
+.titleimganim
+{
+    transition: 2s !important;
+    transform: scale(5) !important;
+}
 .title
 {
     position: fixed;
@@ -110,7 +119,8 @@ animation: shaker 0.4s;
 background-color: var(--blue) !important;
 transition: 0.3s !important;
 display:flex !important;
-z-index: 1;transform:scale(1.1);
+z-index: 1;
+transform:scale(1.1);
 }
 @font-face {
 font-family: handwrite;

@@ -61,25 +61,30 @@
 $(document).ready(function(){
 document.getElementById('mainbox').style.background = "#657AAB";
 })
+
 $('.titleimg').on('click',function(){
-    let el = this;
-    setTimeout(() => {
-        $(el).hide();
-    }, 0);
-    $('.container div').removeClass('shown');
-    $('.container h3').hide();
-    $('.titleimg').show();
+let el = this;
+$(el).addClass('titleimganim')
+setTimeout(() => {
+$(el).hide();
+$(el).removeClass('titleimganim')
+}, 600);
+$('.container div').removeClass('shown');
+$('.container h3').hide();
+$('.titleimg').show();
 let backG = $(el).attr("alt",)
 let bodyG = document.getElementById('mainbox');
 let backG1 = bodyG.style.background = "url("+backG+")";
+$('.footer h3').html('');
 })
+
 $('.container div img').on('click',function(){
 let el  = this;
 let title = $(el).attr('name');
 $('.footer h3').html(title);
 })
-$('.container div').on('click',function(){
 
+$('.container div').on('click',function(){
 $('.container div').removeClass('shown');
 $('.container h3').hide();
 setTimeout(() => {
@@ -89,7 +94,6 @@ let backG = $('.shown img').attr("alt",)
 let bodyG = document.getElementById('mainbox');
 let backG1 = bodyG.style.background = "url("+backG+")";
 }, 0);
-
 })
 
 </script> 
