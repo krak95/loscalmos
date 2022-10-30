@@ -10,7 +10,7 @@
 }
 /* width */
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 0px;
   }
   
   /* Track */
@@ -244,10 +244,10 @@ position:absolute;
 }
 .chat-box-container
 {
+    margin-right:10px;
 position: relative;
 border-radius: 5px;
 border:2px solid black;
-padding:2px;
 width: 300px;
 background-color: var(--dblue);
 display:block;
@@ -258,6 +258,24 @@ display:block;
     display:flex;
     justify-content: space-between;
     align-items: center;
+}
+.mini
+{
+    background-color: var(--blue);
+    border-radius: 5.6px;
+}
+.mini:hover
+{
+    background-color: var(--bblue);
+}
+.close
+{
+    background-color: var(--blue);
+    border-radius: 50%;
+}
+.close:hover
+{
+    background-color: var(--bblue);
 }
 .chatheader li
 {
@@ -345,6 +363,14 @@ justify-content: center;
 height: 150px;
 width: auto;
 }
+@keyframes shaker {
+    0%{transform:rotate(0)}
+    20%{transform:rotate(-2deg)}
+    40%{transform:rotate(2deg)}
+    60%{transform:rotate(-2deg)}
+    80%{transform:rotate(2deg)}
+    100%{transform:rotate(0)}
+}
 .mainmenu li{
 cursor: pointer;
 border-radius: 5px;
@@ -359,6 +385,7 @@ display: block;
 box-shadow:0px 2px 6px 2px var(--grey);
 }
 .mainmenu li:hover{
+animation:shaker 0.6s;
 color: var(--dblue);
 cursor: pointer;
 background-color: var(--blue);

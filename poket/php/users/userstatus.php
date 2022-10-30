@@ -52,7 +52,6 @@ $('.friends li').on('click',function(){
 let el = this;
 let div = $(el).children();
 let status = $(div).first().attr('class');
-console.log(status)
 const username = $(el).data('id');
 if ($('#'+username).length != 0){
    return;
@@ -61,7 +60,7 @@ if ($('#'+username).length != 0){
 
 
 $('.chat-box-div').css('display','flex');
-$('.chat-box-div').prepend('<div class="chat-box-container"><ol class="chatheader"><li><div class="'+status+'" class="stock-red"></div>&nbsp<img src="img/friend.png">&nbsp<h3>'+username+'</h3></li><li><button>m</button><button>c</button></li></ol><div id='+username+' class="chat-msg-box"><ol class='+username+'></ol></div><div class="chat-data-box"><input type="text" id="text-msg'+username+'"><button id="submit-chat'+username+'">Send</button></div></div>');
+$('.chat-box-div').prepend('<div id="chatcontainer'+username+'" class="chat-box-container"><ol class="chatheader"><li><div class="'+status+'" class="stock-red"></div>&nbsp<img src="img/friend.png">&nbsp<h3>'+username+'</h3></li><li><img class="mini" src="img/mini.png">&nbsp<img id="close'+username+'" class="close" src="img/close.png"></li></ol><div id='+username+' class="chat-msg-box"><ol class='+username+'></ol></div><div class="chat-data-box"><input type="text" id="text-msg'+username+'"><button id="submit-chat'+username+'">Send</button></div></div>');
 $.ajax({
 url:'php/chat/msgseen.php',
 type:'post',
@@ -92,7 +91,6 @@ let leng = 0;
 const ref = setInterval(() => {
 if(leng != $('.chat-msg-box li').length){
 leng = $('.chat-msg-box li').length;
-console.log(leng);
 $('#'+username).scrollTop($('#'+username+' '+'ol')[0].scrollHeight);
 }
 }, 150);
@@ -125,7 +123,14 @@ $('#'+username).scrollTop($('#'+username+' '+'ol')[0].scrollHeight);
 }
 })
 })
+
+$('#close'+username).on('click',function(){
+    console.log('olá')
+    $('#chatcontainer'+username).remove();
 })
+})
+
+
 //END OF DOCUMENT
 })
 </script>
