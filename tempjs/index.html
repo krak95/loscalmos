@@ -17,9 +17,22 @@
 <div class="showbox">
 <div class="wrapper">
 <div class="container">
-<div ><img draggable="false" src="img/akatsuki/deidaraaka.webp" alt="img/akatsuki/background/deidaraback.webp"><h3>Deidara</h3></div>
-<div ><img draggable="false" src="img/akatsuki/hidanaka.webp" alt="img/akatsuki/background/hidanback.jpg"><h3>Hidan</h3></div>
-<div ><img draggable="false" src="img/akatsuki/itachiaka.jpg" alt="img/akatsuki/background/itachiback.webp"><h3>Itachi</h3></div>
+    <img class="titleimg" src="img/konoha/konohaback.jpg" alt="">
+    <div ><img draggable="false" src="img/akatsuki/deidaraaka.webp" alt="img/akatsuki/background/deidaraback.webp"><h3>Deidara</h3></div>
+    <div ><img draggable="false" src="img/akatsuki/hidanaka.webp" alt="img/akatsuki/background/hidanback.jpg"><h3>Hidan</h3></div>
+    <div ><img draggable="false" src="img/akatsuki/itachiaka.jpg" alt="img/akatsuki/background/itachiback.webp"><h3>Itachi</h3></div>
+    <div><img draggable="false" src="img/akatsuki/kakuzuaka.png" alt="img/akatsuki/background/kakuzuback.jpg"><h3>Kakuzu</h3></div>
+    <div><img draggable="false" src="img/akatsuki/kisameaka.webp" alt="img/akatsuki/background/kisameback.webp"><h3>Kisame</h3></div>
+    <div><img draggable="false" src="img/akatsuki/konanaka.jpg" alt="img/akatsuki/background/konanback.webp"><h3>Konan</h3></div>
+    <div><img draggable="false" src="img/akatsuki/painaka.jpg" alt="img/akatsuki/background/painback.jpg"><h3>Pain</h3></div>
+    <div><img draggable="false" src="img/akatsuki/sasoriaka.webp" alt="img/akatsuki/background/sasoriback.jpg"><h3>Sasori</h3></div>
+    <div><img draggable="false" src="img/akatsuki/tobiaka.webp" alt="img/akatsuki/background/tobiback.jpg"><h3>Tobi</h3></div>
+</div>
+<div class="container">
+<img class="titleimg" src="img/akatsuki/background/aka2.jpg" alt="">
+<div><img draggable="false" src="img/akatsuki/deidaraaka.webp" alt="img/akatsuki/background/deidaraback.webp"><h3>Deidara</h3></div>
+<div><img draggable="false" src="img/akatsuki/hidanaka.webp" alt="img/akatsuki/background/hidanback.jpg"><h3>Hidan</h3></div>
+<div><img draggable="false" src="img/akatsuki/itachiaka.jpg" alt="img/akatsuki/background/itachiback.webp"><h3>Itachi</h3></div>
 <div><img draggable="false" src="img/akatsuki/kakuzuaka.png" alt="img/akatsuki/background/kakuzuback.jpg"><h3>Kakuzu</h3></div>
 <div><img draggable="false" src="img/akatsuki/kisameaka.webp" alt="img/akatsuki/background/kisameback.webp"><h3>Kisame</h3></div>
 <div><img draggable="false" src="img/akatsuki/konanaka.jpg" alt="img/akatsuki/background/konanback.webp"><h3>Konan</h3></div>
@@ -28,6 +41,8 @@
 <div><img draggable="false" src="img/akatsuki/tobiaka.webp" alt="img/akatsuki/background/tobiback.jpg"><h3>Tobi</h3></div>
 <div><img  draggable="false" src="img/akatsuki/zetsuaka.jpg" alt="img/akatsuki/background/zetsuback.jpg"><h3>Zetsu</h3></div>
 </div>
+</div>
+
 </div>
 </div>
 </body>
@@ -42,9 +57,9 @@ $('.container div').removeClass('shown');
 $('.container h3').hide();
 setTimeout(() => {
 $(this).addClass('shown');
-setTimeout(() => {
+
     $('.shown h3').show();
-}, 500);
+
 
 $('.showbox>img').remove();
 let backG = $('.shown img').attr("alt",)
