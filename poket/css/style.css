@@ -71,7 +71,7 @@ top:0;
 transition:0.5s;
 z-index: 1;
 margin:0 auto;
-position: fixed;
+position: absolute;
 margin:10px;
 right: 0;
 }
@@ -94,7 +94,7 @@ background-color: var(--blue);
 }
 .sidebar
 {
-position:fixed;
+position:absolute;
 top:0;
 left:0;
 z-index: 1;
@@ -153,7 +153,7 @@ width: 200px;
 color:white;
 background-color: var(--dblue);
 left:-200px;
-position: fixed;
+position: absolute;
 top:80px;
 transition: 0.4s;
 }
@@ -162,7 +162,7 @@ transition: 0.4s;
 color:white;
 background-color: var(--dblue);
 left:0;
-position: fixed;
+position: absolute;
 top:80px;
 transition: 0.4s;
 }
@@ -239,7 +239,7 @@ display:none;
 z-index: 1;
 justify-content: center;
 bottom:0;
-left: 5%;
+left: 1%;
 position:absolute;
 }
 .chat-box-container
@@ -353,9 +353,6 @@ background-color: var(--blue);
 }
 
 .mainmenu{
-right:0;
-left:0;
-margin:0 auto;
 display: flex;
 justify-content: center;
 }
@@ -394,7 +391,7 @@ transition: ease-in .5s;
 }
 .form-signup
 {
-position: fixed;
+position: absolute;
 right: 0;
 left:0;
 margin:0 auto;
@@ -528,7 +525,7 @@ width: 70%;
  }
 .profile-div
 {
-position: fixed;
+position: absolute;
 left:0;
 right: 0;
 margin:0 auto;
@@ -558,7 +555,7 @@ width: calc(100%/5);
 }
 .my-poket
 {
-position:fixed;
+position:absolute;
 width: 100%;
 bottom:30%;
 margin-bottom:5px;
@@ -575,7 +572,7 @@ height: auto;
 }
 .play-div
 {
-position: fixed;
+position: absolute;
 bottom:0;
 height: 30%;
 margin:5px;
@@ -608,7 +605,7 @@ box-shadow:0px 6px 8px 2px var(--grey);
 {   
     background-color: red;
     padding:50px;
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -617,7 +614,7 @@ box-shadow:0px 6px 8px 2px var(--grey);
 {
     background-color: red;
     padding:50px;
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;

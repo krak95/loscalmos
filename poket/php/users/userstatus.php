@@ -99,6 +99,7 @@ $('#'+username).scrollTop($('#'+username+' '+'ol')[0].scrollHeight);
 $('.backcurtain,.return').on('click',function(){
 $('.chat-box-div').css('display','none');
 $('.chat-box-div').children().remove();
+$('.friends').removeClass('friends-list-open');
 clearInterval(refreshchat);
 clearInterval(ref);
 })
@@ -116,7 +117,7 @@ url:'php/chat/sent-chat.php',
 type:'post',
 data:{username:username,msg:msg},
 success:function(){
-setTimeout(() => {
+const getleng = setTimeout(() => {
 $('#'+username).scrollTop($('#'+username+' '+'ol')[0].scrollHeight);
 }, 200);
 
@@ -128,6 +129,7 @@ $('#close'+username).on('click',function(){
     console.log('olá')
     $('#chatcontainer'+username).remove();
 })
+
 })
 
 

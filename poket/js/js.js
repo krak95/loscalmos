@@ -123,7 +123,7 @@ $('.backcurtain').show();
 setTimeout(() => {
 $('#friendson').hide();
 $('#friendsoff').show();
-}, 530);
+}, 111);
 
 setTimeout(() => {
 
@@ -160,11 +160,20 @@ clearInterval(refresh);
 setTimeout(() => {
 $('#friendson').show();
 $('#friendsoff').hide();
-}, 530);
+}, 222);
 
 })
 })
-
+$('.backcurtain,.return').on('click',function(){
+    $('.friends-btn-on').removeClass('friendsanime');
+    $('.friends-btn-off').removeClass('friendsanime');
+    $('.backcurtain').hide();
+    $('.friends').removeClass('friends-list-open');
+setTimeout(() => {
+    $('#friendson').show();
+    $('#friendsoff').hide();
+    }, 222);
+    })
 function endsession(){
 $(window).on('beforeunload', function(){
 $('.screen').append('<div class="closesession">Closing session...</>')
