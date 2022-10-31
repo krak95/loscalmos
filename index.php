@@ -15,6 +15,7 @@ $admin=$_SESSION['admin'] ?? null;
 <script src='js/js.js'></script>
 <link href='css/mystyle.css' rel='stylesheet' type='text/css'/>
 <script>
+topmenuselected();
 loginform();
 login();
 reguser();
@@ -39,7 +40,7 @@ additemadmin();
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title></title>
+<title>E-Commerce</title>
 </head>
 <body>
 

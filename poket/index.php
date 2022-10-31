@@ -12,7 +12,8 @@ $msg = $_SESSION['msg'] ?? null;
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href='css/style.css' rel='stylesheet'>
-<script src='js/library/jq.js'></script><script src='js/js.js'></script>
+<script src='js/library/jq.js'></script>
+<script src='js/js.js'></script>
 <title>Poket</title>
 </head>
 <body>
@@ -25,7 +26,6 @@ if(isset($username)){
 <button class='friends-btn-on' id ='friendson'><h3><?=$username?></h3><img src="img/friend.png" alt=""> </button>
 <button class='friends-btn-off' id ='friendsoff'><h3><?=$username?></h3><img src="img/friend.png" alt=""> </button>
 </div>
-
 <div class='friends'>
 <ol>
 </ol>

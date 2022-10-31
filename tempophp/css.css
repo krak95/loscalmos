@@ -1,0 +1,28 @@
+.sq{
+    padding:50px;
+    background-color: rgb(172, 172, 255);
+    position: absolute;
+    left:100px;
+    top:100px;
+}
+.sq1{
+    padding:50px;
+    background-color: rgb(255, 164, 164);
+    position: absolute;
+    margin-top:250px;
+}
+.get
+{
+    padding:20px;
+    background-color: rgb(140, 236, 140);
+    position: absolute;
+    top:500px;
+}
+.get1
+{
+    padding:20px;
+    background-color: rgb(216, 235, 133);
+    position: absolute;
+    top:500px;
+    left:100px;
+}

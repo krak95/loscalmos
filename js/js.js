@@ -6,6 +6,18 @@ function keyPressed(){
 var key = event.keyCode || event.charCode || event.which ;
 return key;
 }
+
+function topmenuselected(){
+    $(document).ready(function(){
+    $('.topmenu li').on('click',function(){
+        $('.topmenu li').removeClass('topmenuselected')
+        setTimeout(() => {
+            $(this).addClass('topmenuselected')
+        }, 0);
+    })
+})
+}
+
 function loginform(){
 $(document).ready(function(){
 $('#topmenu-login').click(function(){

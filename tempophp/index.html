@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="write" id="write">This is Javascript training session.</div>
+   
+    <div id='sq' class="sq">
+        <p id="nameshow"></p>
+        <p id="ageshow"></p>
+    </div>
+    <div id='sq1' class="sq1" onclick="create()"></div>
+    <div class="get" onclick="getitem()">get</div>
+    <div class="get1" onclick="getitem1()">get</div>
+    <input id='nameinp' type="text">
+    <input id='ageinp' type="text">
+
+</body>
+</html>
+
+<script>
+let words = document.getElementById('write').innerText
+let i = 0;
+function animation(){
+document.getElementById('write').innerText = words.slice(0,i)
+i++
+if(i>words.length)
+{
+i = 0;
+}
+}
+setInterval(animation,200)
+
+
+
+    function Char(name, age){
+        this.name = name
+        this.age = age
+    }
+    function create(){
+        let nameinp = document.getElementById('nameinp').value
+        let ageinp = document.getElementById('ageinp').value
+        const char1 = new Char(nameinp,ageinp)
+        console.log(nameinp)
+        console.log(ageinp)
+        let storedata1 =  char1.name; 
+        let storedata2 = char1.age;
+        let array = new Array({'name':storedata1, 'age':storedata2})
+        sessionStorage.setItem('char1',JSON.stringify(array))
+    }
+    function getitem(){
+        let get = JSON.parse(sessionStorage.getItem('char1'))
+        let result = get.map(function(element){
+            return `${element.name}`;
+})
+        console.log(result);
+        document.getElementById("nameshow").innerHTML = result
+    }
+    function getitem1(){
+        let get = JSON.parse(sessionStorage.getItem('char1'))
+        let result = get.map(function(element){
+            return `${element.age}`;
+})
+        console.log(result);
+        document.getElementById("ageshow").innerHTML = result
+    }
+    
+</script>
