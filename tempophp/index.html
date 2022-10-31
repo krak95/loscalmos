@@ -9,17 +9,21 @@
 </head>
 <body>
 
-    <div class="write" id="write">This is Javascript training session.</div>
+    <div class="write" ><h1>Hi.&nbsp </h1><h1 id="write">This is Javascript training session.</h1></div>
    
-    <div id='sq' class="sq">
-        <p id="nameshow"></p>
-        <p id="ageshow"></p>
+    
+    <input id='nameinp' placeholder="name" type="text">
+    <input id='ageinp' placeholder="age" type="text">
+    <div>
+        <button id='sq1' class="sq1" onclick="create()">sessionStorage</button>
+        <button class="get" onclick="getitem()">get name</button>
+        <button class="get1" onclick="getitem1()">get age</button>
     </div>
-    <div id='sq1' class="sq1" onclick="create()"></div>
-    <div class="get" onclick="getitem()">get</div>
-    <div class="get1" onclick="getitem1()">get</div>
-    <input id='nameinp' type="text">
-    <input id='ageinp' type="text">
+
+    <div id='sq' class="sq">
+        <h3>Name:&nbsp </h3><p id="nameshow"></p>&nbsp&nbsp
+        <h3>Age:&nbsp</h3><p id="ageshow"></p>
+    </div>
 
 </body>
 </html>

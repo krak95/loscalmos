@@ -1,28 +1,33 @@
+
+.write
+{
+    display: flex;
+    justify-content: center;
+}
 .sq{
     padding:50px;
     background-color: rgb(172, 172, 255);
-    position: absolute;
-    left:100px;
-    top:100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .sq1{
-    padding:50px;
+    padding: 20px;
     background-color: rgb(255, 164, 164);
-    position: absolute;
-    margin-top:250px;
+    position: relative;
+    word-break: break-all;
 }
 .get
 {
     padding:20px;
     background-color: rgb(140, 236, 140);
-    position: absolute;
-    top:500px;
+    position: relative;
 }
 .get1
 {
     padding:20px;
     background-color: rgb(216, 235, 133);
-    position: absolute;
-    top:500px;
-    left:100px;
+    position: relative;
+
 }
