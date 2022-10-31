@@ -17,12 +17,12 @@
 <div class="showbox">
 <div class="wrapper">
 <div class="container">
-<img class="titleimg" src="img/konoha/konohaback.jpg" name="" alt="img/konoha/konohaback.jpg">
+<img class="titleimg" draggable="false" src="img/konoha/konohaback.jpg" name="" alt="img/konoha/konohaback.jpg">
 <div ><img draggable="false" src="img/konoha/naruto.jpg" name="Naruto" alt="img/konoha/naruto.jpg"><h3></h3></div>
 <div ><img draggable="false" src="img/konoha/sasuke.jpg" name="Sasuke" alt="img/konoha/sasuke.jpg"><h3></h3></div>
 <div ><img draggable="false" src="img/konoha/sakura.webp" name="Sakura" alt="img/konoha/sakura.webp"><h3></h3></div>
 <div><img draggable="false" src="img/konoha/sai.webp" name="Sai" alt="img/konoha/sai.webp"><h3></h3></div>
-<div><img draggable="false" src="img/konoha/kakashi.webp" name="kakashi" alt="img/konoha/kakashi.webp"><h3></h3></div>
+<div><img draggable="false" src="img/konoha/kakashi.webp" name="Kakashi" alt="img/konoha/kakashi.webp"><h3></h3></div>
 <div><img draggable="false" src="img/konoha/shikam.jpg" name="Shikamaru" alt="img/konoha/shikam.jpg"><h3></h3></div>
 <div><img draggable="false" src="img/konoha/ino.jpg" name="Ino" alt="img/konoha/ino.jpg"></div>
 <div><img draggable="false" src="img/konoha/choji.webp" name="Choji" alt="img/konoha/choji.webp"><h3></h3></div>
@@ -38,7 +38,7 @@
 
 </div>
 <div class="container">
-<img class="titleimg" src="img/akatsuki/background/aka2.jpg" name="" alt="img/akatsuki/background/aka2.jpg">
+<img class="titleimg" draggable="false" src="img/akatsuki/background/aka2.jpg" name="" alt="img/akatsuki/background/aka2.jpg">
 <div><img draggable="false" src="img/akatsuki/deidaraaka.webp" name="Deidara" alt="img/akatsuki/background/deidaraback.webp"><h3></h3></div>
 <div><img draggable="false" src="img/akatsuki/hidanaka.webp" name="Hidan" alt="img/akatsuki/background/hidanback.jpg"><h3></h3></div>
 <div><img draggable="false" src="img/akatsuki/itachiaka.jpg" name="Itachi" alt="img/akatsuki/background/itachiback.webp"><h3></h3></div>
@@ -64,15 +64,15 @@ document.getElementById('mainbox').style.background = "#657AAB";
 
 $('.titleimg').on('click',function(){
 let el = this;
-$(el).addClass('titleimganim')
+$(el).addClass('titleimganim');
 setTimeout(() => {
 $(el).hide();
-$(el).removeClass('titleimganim')
-}, 600);
+$(el).removeClass('titleimganim');
+}, 200);
 $('.container div').removeClass('shown');
 $('.container h3').hide();
 $('.titleimg').show();
-let backG = $(el).attr("alt",)
+let backG = $(el).attr("alt",);
 let bodyG = document.getElementById('mainbox');
 let backG1 = bodyG.style.background = "url("+backG+")";
 $('.footer h3').html('');
