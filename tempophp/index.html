@@ -8,25 +8,25 @@
 <title>Document</title>
 </head>
 <body>
-    
-    <div>
-        <ol>
-            <li><button onclick="sessionShow()" id="storageShow">Storage Session</button></li>
-            <li><button onclick="stylingShow()" id="storageShow">Styling Session</button></li>
-        </ol>
-    </div>
-    <div id="stylingsession" class="stylingsession">
-<div class="outer">
-        <div class="middle">
-            <div class="inner"><img src="user.png" alt=""></div>
-        </div>
-    </div>
-        <div class="movingdiv"></div>
 
-    </div>
-    <!--SESSION STORAGE-->
-    <div id="sessionstorage">
-    <div class="write" ><h1>Hi.&nbsp </h1><h1 id="write">This is Javascript training session.</h1></div>
+<div>
+<ol>
+<li><button onclick="sessionShow()" id="storageShow">Storage Session</button></li>
+<li><button onclick="stylingShow()" id="storageShow">Styling Session</button></li>
+</ol>
+</div>
+<div id="stylingsession" class="stylingsession">
+<div class="outer">
+<div class="middle">
+<div class="inner"><img src="user.png" alt=""></div>
+</div>
+</div>
+<div class="movingdiv"></div>
+
+</div>
+<!--SESSION STORAGE-->
+<div id="sessionstorage">
+<div class="write" ><h1>Hi.&nbsp </h1><h1 id="write">This is Javascript training session.</h1></div>
 <input id='itemid' placeholder="itemid" type="hidden">
 <input id='nameinp' placeholder="name" type="text">
 <input id='ageinp' placeholder="age" type="text">
@@ -40,8 +40,8 @@
 
 <div id='sq' class="sq">
 <table>
-    <tbody id="sqtable">
-    <th>Items</th>
+<tbody id="sqtable">
+<th>Items</th>
 </tbody>
 </table>
 </div>
@@ -52,15 +52,26 @@
 </html>
 
 <script>
-    /* STORAGE SESSION */
+/*DOM MANIPULATON*/
+document.getElementById('stylingsession').style.display = 'none'
+function stylingShow(){
+let x = document.getElementById('stylingsession')
+if (x.style.display === "none") {
+x.style.display = "flex";
+} else {
+x.style.display = "none";
+}
+}
+/*DOM MANIPULATON*/
+/* JAVASCRIPT SESSION */
 document.getElementById('sessionstorage').style.display = 'none'
 function sessionShow(){
-    let x = document.getElementById('sessionstorage')
-    if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
+let x = document.getElementById('sessionstorage')
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
 }
 
 let words = document.getElementById('write').innerText
@@ -80,7 +91,7 @@ this.age = age
 }
 let itemid = sessionStorage.length;
 function create(){
-    ++itemid
+++itemid
 let nameinp = document.getElementById('nameinp').value
 let ageinp = document.getElementById('ageinp').value
 const char1 = new Char(nameinp,ageinp)
@@ -114,32 +125,24 @@ sessionStorage.clear();
 }
 
 function showALL(){
-    let sq = document.getElementById('sqtable');
-    let ageshow = document.getElementById('ageshow');
-    var archive = [],
-        keys = Object.keys(sessionStorage),
-        i = 0, key;
-    for (; key = keys[i]; i++) {
-    let archive = (sessionStorage.getItem(key));
-    let values = Object.values(key)
-    let tr = document.createElement('tr')
-    document.getElementById('sqtable').appendChild(tr).append(values +' = '+ archive)
+let sq = document.getElementById('sqtable');
+let ageshow = document.getElementById('ageshow');
+var archive = [],
+keys = Object.keys(sessionStorage),
+i = 0, key;
+for (; key = keys[i]; i++) {
+let archive = (sessionStorage.getItem(key));
+let values = Object.values(key)
+let tr = document.createElement('tr')
+document.getElementById('sqtable').appendChild(tr).append(values +' = '+ archive)
 }
 console.log(archive)
 
 }
 
 function removeall(){
-    sessionStorage.clear();
+sessionStorage.clear();
 }
 /*END OF STORAGE SESSION*/
-document.getElementById('stylingsession').style.display = 'none'
-function stylingShow(){
-    let x = document.getElementById('stylingsession')
-    if (x.style.display === "none") {
-    x.style.display = "flex";
-  } else {
-    x.style.display = "none";
-  }
-}
+
 </script>

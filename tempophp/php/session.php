@@ -1,14 +1,20 @@
 <?php
-
-class Create{
-    private $name_p;
-    private $age_p;
-
-    public function __construct($name_c,$age_c)
-    {
-        $this->name_p = $name_c;
-        $this->age_p = $age_c;
-    }
-
-
-}
+session_start();
+$name = $_SESSION['name'];
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="login.php" method="post">
+    <input name='name' type="text">
+    <button name='submit' type='submit'>set</button>
+    </form>
+    <?php echo $name ; ?>
+</body>
+</html>
