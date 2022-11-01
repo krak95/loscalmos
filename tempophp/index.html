@@ -1,34 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css.css">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css.css">
+<title>Document</title>
 </head>
 <body>
-
-    <div class="write" ><h1>Hi.&nbsp </h1><h1 id="write">This is Javascript training session.</h1></div>
-   
     
-    <input id='nameinp' placeholder="name" type="text">
-    <input id='ageinp' placeholder="age" type="text">
     <div>
-        <button id='sq1' class="sq1" onclick="create()">sessionStorage</button>
-        <button class="get" onclick="getitem()">get name</button>
-        <button class="get1" onclick="getitem1()">get age</button>
+        <ol>
+            <li><button onclick="sessionShow()" id="storageShow">Storage Session</button></li>
+            <li><button onclick="stylingShow()" id="storageShow">Styling Session</button></li>
+        </ol>
     </div>
+    <div id="stylingsession" class="stylingsession">
+<div class="outer">
+        <div class="middle">
+            <div class="inner"><img src="user.png" alt=""></div>
+        </div>
+    </div>
+        <div class="movingdiv"></div>
 
-    <div id='sq' class="sq">
-        <h3>Name:&nbsp </h3><p id="nameshow"></p>&nbsp&nbsp
-        <h3>Age:&nbsp</h3><p id="ageshow"></p>
     </div>
+    <!--SESSION STORAGE-->
+    <div id="sessionstorage">
+    <div class="write" ><h1>Hi.&nbsp </h1><h1 id="write">This is Javascript training session.</h1></div>
+<input id='itemid' placeholder="itemid" type="hidden">
+<input id='nameinp' placeholder="name" type="text">
+<input id='ageinp' placeholder="age" type="text">
+<div>
+<button id='sq1' class="sq1" onclick="create()">sessionStorage</button>
+<button class="get" onclick="getitem()">get name</button>
+<button class="get1" onclick="getitem1()">get age</button>
+<button class="getall" onclick="showALL()">get all</button>
+<button class="removeall" onclick="removeall()">removeall</button>
+</div>
+
+<div id='sq' class="sq">
+<table>
+    <tbody id="sqtable">
+    <th>Items</th>
+</tbody>
+</table>
+</div>
+</div>
+<!--END OF SESSION STORAGE-->
 
 </body>
 </html>
 
 <script>
+    /* STORAGE SESSION */
+document.getElementById('sessionstorage').style.display = 'none'
+function sessionShow(){
+    let x = document.getElementById('sessionstorage')
+    if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 let words = document.getElementById('write').innerText
 let i = 0;
 function animation(){
@@ -40,39 +74,72 @@ i = 0;
 }
 }
 setInterval(animation,200)
+function Char(name, age){
+this.name = name
+this.age = age
+}
+let itemid = sessionStorage.length;
+function create(){
+    ++itemid
+let nameinp = document.getElementById('nameinp').value
+let ageinp = document.getElementById('ageinp').value
+const char1 = new Char(nameinp,ageinp)
+console.log(nameinp)
+console.log(ageinp)
+let storedata1 =  char1.name; 
+let storedata2 = char1.age;
+let array = new Array({'name':storedata1, 'age':storedata2})
+sessionStorage.setItem(itemid,JSON.stringify(array))
+}
+function getitem(){
+let get = JSON.parse(sessionStorage.getItem(itemid))
+let result = get.map(function(element){
+return `${element.name}`;
 
-
-
-    function Char(name, age){
-        this.name = name
-        this.age = age
-    }
-    function create(){
-        let nameinp = document.getElementById('nameinp').value
-        let ageinp = document.getElementById('ageinp').value
-        const char1 = new Char(nameinp,ageinp)
-        console.log(nameinp)
-        console.log(ageinp)
-        let storedata1 =  char1.name; 
-        let storedata2 = char1.age;
-        let array = new Array({'name':storedata1, 'age':storedata2})
-        sessionStorage.setItem('char1',JSON.stringify(array))
-    }
-    function getitem(){
-        let get = JSON.parse(sessionStorage.getItem('char1'))
-        let result = get.map(function(element){
-            return `${element.name}`;
 })
-        console.log(result);
-        document.getElementById("nameshow").innerHTML = result
-    }
-    function getitem1(){
-        let get = JSON.parse(sessionStorage.getItem('char1'))
-        let result = get.map(function(element){
-            return `${element.age}`;
+console.log(result);
+document.getElementById("nameshow").innerHTML = result
+}
+function getitem1(){
+let get = JSON.parse(sessionStorage.getItem(itemid))
+let result = get.map(function(element){
+return `${element.age}`;
 })
-        console.log(result);
-        document.getElementById("ageshow").innerHTML = result
-    }
-    
+console.log(result);
+document.getElementById("ageshow").innerHTML = result
+}
+
+function removeALL(){
+sessionStorage.clear();
+}
+
+function showALL(){
+    let sq = document.getElementById('sqtable');
+    let ageshow = document.getElementById('ageshow');
+    var archive = [],
+        keys = Object.keys(sessionStorage),
+        i = 0, key;
+    for (; key = keys[i]; i++) {
+    let archive = (sessionStorage.getItem(key));
+    let values = Object.values(key)
+    let tr = document.createElement('tr')
+    document.getElementById('sqtable').appendChild(tr).append(values +' = '+ archive)
+}
+console.log(archive)
+
+}
+
+function removeall(){
+    sessionStorage.clear();
+}
+/*END OF STORAGE SESSION*/
+document.getElementById('stylingsession').style.display = 'none'
+function stylingShow(){
+    let x = document.getElementById('stylingsession')
+    if (x.style.display === "none") {
+    x.style.display = "flex";
+  } else {
+    x.style.display = "none";
+  }
+}
 </script>
