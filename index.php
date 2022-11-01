@@ -187,8 +187,10 @@ case 3:echo "<td class='stock-red'><div></div></td>";break;
 
 <div class='cart-div'>
 <div class='cart-container'>
-<table id='cart-container-table'>
+    <div class="cart-container-table">
+<table id='cart-table'>
 </table>
+</div>
 <div class='cartlist'>
 <ol id='cartlist'>
 </ol>
