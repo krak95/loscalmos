@@ -59,7 +59,7 @@ additemadmin();
 <li id='topmenu-cart'><img src="php/img/icons/cart.png" alt=""></li>
 </ol>
 </div>
-
+<div class='main-content'>
 <div class='reg-div'>
 <div class='reg-container'>
 <div >
@@ -189,7 +189,7 @@ case 3:echo "<td class='stock-red'><div></div></td>";break;
 <div class='cart-container'>
 <table id='cart-container-table'>
 </table>
-<div>
+<div class='cartlist'>
 <ol id='cartlist'>
 </ol>
 </div> 
@@ -230,10 +230,11 @@ if($admin == 1){
 
 </div>
 </div>
+<div class='iteminfo'></div>
+</div>
 <?php
 }
 ?>
-<div class='iteminfo'></div>
 <div class='backcurtain'></div>
 </body>
 </html>

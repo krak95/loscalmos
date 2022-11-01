@@ -17,10 +17,10 @@
 <div class="showbox">
 <div class="wrapper">
 <div class="container">
-<img class="titleimg" draggable="false" src="img/konoha/konohaback.jpg" name="" alt="img/konoha/konohaback.jpg">
-<div ><img draggable="false" src="img/konoha/naruto.jpg" name="Naruto" alt="img/konoha/naruto.jpg"><h3></h3></div>
-<div ><img draggable="false" src="img/konoha/sasuke.jpg" name="Sasuke" alt="img/konoha/sasuke.jpg"><h3></h3></div>
-<div ><img draggable="false" src="img/konoha/sakura.webp" name="Sakura" alt="img/konoha/sakura.webp"><h3></h3></div>
+<img class="titleimg" draggable="false" src="img/konoha/konohaback.jpg" name="Konoha" alt="img/konoha/konohaback.jpg">
+<div><img draggable="false" src="img/konoha/naruto.jpg" name="Naruto" alt="img/konoha/naruto.jpg"><h3></h3></div>
+<div><img draggable="false" src="img/konoha/sasuke.jpg" name="Sasuke" alt="img/konoha/sasuke.jpg"><h3></h3></div>
+<div><img draggable="false" src="img/konoha/sakura.webp" name="Sakura" alt="img/konoha/sakura.webp"><h3></h3></div>
 <div><img draggable="false" src="img/konoha/sai.webp" name="Sai" alt="img/konoha/sai.webp"><h3></h3></div>
 <div><img draggable="false" src="img/konoha/kakashi.webp" name="Kakashi" alt="img/konoha/kakashi.webp"><h3></h3></div>
 <div><img draggable="false" src="img/konoha/shikam.jpg" name="Shikamaru" alt="img/konoha/shikam.jpg"><h3></h3></div>
@@ -38,7 +38,7 @@
 
 </div>
 <div class="container">
-<img class="titleimg" draggable="false" src="img/akatsuki/background/aka2.jpg" name="" alt="img/akatsuki/background/aka2.jpg">
+<img class="titleimg" draggable="false" src="img/akatsuki/background/aka2.jpg" name="Akatsuki" alt="img/akatsuki/background/aka2.jpg">
 <div><img draggable="false" src="img/akatsuki/deidaraaka.webp" name="Deidara" alt="img/akatsuki/background/deidaraback.webp"><h3></h3></div>
 <div><img draggable="false" src="img/akatsuki/hidanaka.webp" name="Hidan" alt="img/akatsuki/background/hidanback.jpg"><h3></h3></div>
 <div><img draggable="false" src="img/akatsuki/itachiaka.jpg" name="Itachi" alt="img/akatsuki/background/itachiback.webp"><h3></h3></div>
@@ -83,6 +83,11 @@ let el  = this;
 let title = $(el).attr('name');
 $('.footer h3').html(title);
 })
+$('.container img').on('click',function(){
+let el  = this;
+let title = $(el).attr('name');
+$('.footer h3').html(title);
+})
 
 $('.container div').on('click',function(){
 $('.container div').removeClass('shown');
@@ -90,7 +95,7 @@ $('.container h3').hide();
 setTimeout(() => {
 $(this).not('.titleimg').addClass('shown');
 $('.shown h3').show();
-let backG = $('.shown img').attr("alt",)
+let backG = $('.shown img').attr("alt")
 let bodyG = document.getElementById('mainbox');
 let backG1 = bodyG.style.background = "url("+backG+")";
 }, 0);

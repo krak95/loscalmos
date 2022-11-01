@@ -35,5 +35,5 @@ while ($row = $result->fetch_assoc()){
     
     <?php } }
     ?>
-<li style='display:flex;justify-content:space-between;margin-top:100px;'><p>Total:</p><p><?=$sum ?? null?></p></li>
+<li class='listsum' style='display:flex;justify-content:space-between;margin-top:100px;'><p >Total:</p><p><?=$sum ?? null?></p></li>
    

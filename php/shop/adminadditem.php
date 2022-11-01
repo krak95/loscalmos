@@ -39,3 +39,5 @@ case 3:echo "<td class='stock-red'><div></div></td>";break;
 <?php
 }
 }
+?>
+<script>navshop();</script>

@@ -22,7 +22,8 @@ function loginform(){
 $(document).ready(function(){
 $('#topmenu-login').click(function(){
 $('.login-div').css('display','flex');
-$('.backcurtain').css('display','flex');
+$('.shop-div').css('display','none');
+$('.cart-div').css('display','none');
 $('.backcurtain').click(function(){
 $('.backcurtain').hide();
 $('.login-div').css('display','none');
@@ -176,8 +177,9 @@ $('#login-btn').removeClass('login-btn-wrongform');
 function loggedin(){
 $(document).ready(function(){
 $('#topmenu-user').click(function(){
-$('.user-div').show();
-$('.backcurtain').show();
+$('.cart-div').css('display','none');
+$('.shop-div').css('display','none');
+$('.user-div').css('display','flex');
 })
 $('.backcurtain').click(function(){
 $('.backcurtain').hide();
@@ -209,6 +211,8 @@ $(document).ready(function(){
 $('#topmenu-shop').click(function(){
 $('.shop-div').css('display','flex');
 $('.cart-div').css('display','none');
+$('.login-div').css('display','none');
+$('.user-div').css('display','none');
 })
 })
 }
@@ -327,7 +331,8 @@ function cart(){
 $(document).ready(function(){
 $('#topmenu-cart').click(function(){
 $('.shop-div').css('display','none');
-$('.cart-div').css('display','block');
+$('.cart-div').css('display','flex');
+$('.login-div').css('display','none');
 var user_id = $('#user-id').data('id');
 $.ajax({
 url:'../php/shop/cart.php',
