@@ -28,12 +28,12 @@ $admin=$_SESSION['admin'] ?? null;
 <div class='topmenu'>
 <ol>
 <li><img src="php/img/icons/logo.png" alt=""> </li> 
-    <?php if (!isset($_SESSION['username']))
+<?php if (!isset($_SESSION['username']))
 {echo "<li id='topmenu-login'><img src='php/img/icons/user.png'>
-    </li>";}
-    else
-    {echo "<li id='topmenu-user'><img src='php/img/icons/user.png'>
-        </li>";} ?>
+</li>";}
+else
+{echo "<li id='topmenu-user'><img src='php/img/icons/user.png'>
+</li>";} ?>
 <li id='topmenu-shop' ><img src="php/img/icons/shop.png" alt=""></li>
 <li id='topmenu-cart'><img src="php/img/icons/cart.png" alt=""></li>
 </ol>
@@ -135,9 +135,9 @@ $img = $row['img'];
 <tr data-id='<?=$item_id?>'>
 <td>
 <img <?php if(!isset($img)){ ?> 
-    src='php/img/icons/close.png?=$img?>' <?php
+src='php/img/icons/close.png?=$img?>' <?php
 }else{
-    ?> src='php/img/item-img/<?=$img?>' <?php
+?> src='php/img/item-img/<?=$img?>' <?php
 } ?>  />
 
 </td>
@@ -159,10 +159,11 @@ case 3:echo "<td class='stock-red'><div></div></td>";break;
 </div>
 </div>
 
-
 <div class='cart-div'>
 <div class='cart-container'>
-    <div class="cart-container-table">
+
+
+<div class="cart-container-table">
 <table id='cart-table'>
 </table>
 </div>
@@ -172,13 +173,14 @@ case 3:echo "<td class='stock-red'><div></div></td>";break;
 </div> 
 </div>
 </div>
+
 <?php 
 if($admin == 1){
 ?>
 <div class='admin-div'>
-    <div class='closeadmin-btn'><img src="php/img/icons/close.png" alt=""></div>
+<div class='closeadmin-btn'><img src="php/img/icons/close.png" alt=""></div>
 <div class='admin-container'>
-    <div class='additem-div'>
+<div class='additem-div'>
 <ol>
 <li><h3>Add item</h3></li>
 <li>

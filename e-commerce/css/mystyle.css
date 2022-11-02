@@ -67,7 +67,6 @@ cursor: pointer;
 }
 .topmenu
 {
-background-color: var(--blue);
 z-index: 0;
 text-align: center;
 width: 100%;
@@ -86,7 +85,7 @@ background-color: var(--blue) !important;
 }
 .topmenu ol
 {
-background-color: var(--blue);
+  background: linear-gradient(90deg, var(--dblue) 0%, var(--blue2) 35%, var(--blue) 100%);
 width: 100%;
 display: flex;
 justify-content: center;

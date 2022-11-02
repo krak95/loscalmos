@@ -327,6 +327,17 @@ return;
 function cart(){
 $(document).ready(function(){
 $('#topmenu-cart').click(function(){
+
+    if(($('.sessionstat').html() == '')){
+        $('.shop-div').css('display','none');
+        $('.cart-div').css('display','none');
+        $('.login-div').css('display','flex');
+        $('.user-div').css('display','none');
+        $('.login-container').append('you need to login before using the cart.')
+    }else{
+
+   
+
 $('.shop-div').css('display','none');
 $('.cart-div').css('display','flex');
 $('.login-div').css('display','none');
@@ -348,6 +359,7 @@ success: function(){
 
 }
 })
+}
 })
 })
 }
