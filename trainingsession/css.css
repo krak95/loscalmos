@@ -14,7 +14,7 @@
 }
 body
 {
-
+background-color: var(--dblue)
 }
 .write
 {
@@ -78,28 +78,42 @@ body
     align-items: center;
     width: 300px;
     height: 300px;
-    background-color: var(--dblue);
     animation: none;
+    overflow: hidden;
     z-index: 1;
 
 }
-.movingdiv
-{   
+@keyframes rotate {
+	100% {
+		transform: rotate(1turn);
+	}
+}
+.inner::before {
+    content: '';
+    z-index: -2;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    position: absolute;
-    z-index: -1;
-    padding:160px;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    animation: rotate 4s linear infinite;  
     box-shadow:
-    -20px -20px 60px 20px slateblue,
-    -20px 20px 60px 20px violet,
-    20px 20px 60px 20px blueviolet,
-    20px -20px 60px 20px rebeccapurple;
-    animation: round linear 5s infinite forwards;
+    -100px -100px 50px 50px skyblue,
+    100px 100px 50px 50px var(--dblue); 
+
 }
-@keyframes round {
-0%{transform:rotate(0deg);}
-25%{transform:rotate(90deg);}
-50%{transform:rotate(180deg);}
-75%{transform:rotate(270deg);}
-100%{transform:rotate(360deg);}
-}
+
+  .inner::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    left:0;
+    right: 0;
+    margin:0 auto;
+    width: 190px;
+    height: 190px;
+    padding:50px;
+    background: white;
+    border-radius: 5px;
+  }
