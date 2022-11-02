@@ -1,0 +1,105 @@
+:root {
+    --dblue: #38435E;
+    --blue: #84A0DF;
+    --bblue:#CAD2E3;
+    --blue2:#657AAB;
+    --grey:#54575E;
+    --greenlight:rgb(0, 255, 0);
+    --lowgreen:rgb(198, 255, 198);
+    }
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body
+{
+
+}
+.write
+{
+    display: flex;
+    justify-content: center;
+}
+.sq{
+    padding:50px;
+    background-color: rgb(172, 172, 255);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.sq1{
+    padding: 20px;
+    background-color: rgb(255, 164, 164);
+    position: relative;
+    word-break: break-all;
+}
+.get
+{
+    padding:20px;
+    background-color: rgb(140, 236, 140);
+    position: relative;
+}
+.get1
+{
+    padding:20px;
+    background-color: rgb(216, 235, 133);
+    position: relative;
+
+}
+.getall
+{
+    padding:20px;
+    background-color: rgb(133, 220, 235);
+    position: relative;
+}
+.removeall
+{
+    background-color: red;
+    color: white;
+}
+
+.csscont{
+    border:1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.stylingsession
+{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    background-color: var(--dblue);
+    animation: none;
+    z-index: 1;
+
+}
+.movingdiv
+{   
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    padding:160px;
+    box-shadow:
+    -20px -20px 60px 20px slateblue,
+    -20px 20px 60px 20px violet,
+    20px 20px 60px 20px blueviolet,
+    20px -20px 60px 20px rebeccapurple;
+    animation: round linear 5s infinite forwards;
+}
+@keyframes round {
+0%{transform:rotate(0deg);}
+25%{transform:rotate(90deg);}
+50%{transform:rotate(180deg);}
+75%{transform:rotate(270deg);}
+100%{transform:rotate(360deg);}
+}
