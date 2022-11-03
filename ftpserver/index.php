@@ -12,22 +12,55 @@
 <body>
 <div class='firstdiv'>
     <h3>FTP-API</h3>
-<div class='files-container'>
-<ol>
-
+    <div class='files-container'>
+    
+<table>
+<th>Name</th>
+<th>Size</th>
 <?php
+        
+
 $path    = 'files';
 if ($handle = opendir($path)) {
 while (false !== ($file = readdir($handle))) {
 if ('.' === $file) continue;
 if ('..' === $file) continue;
+$filesize = filesize('files/'.$file);
+
+if ($filesize >= 1073741824)
+        {
+            $filesize = number_format($filesize / 1073741824, 2) . ' GB';
+        }
+        elseif ($filesize >= 1048576)
+        {
+            $filesize = number_format($filesize / 1048576, 2) . ' MB';
+        }
+        elseif ($filesize >= 1024)
+        {
+            $filesize = number_format($filesize / 1024, 2) . ' KB';
+        }
+        elseif ($filesize > 1)
+        {
+            $filesize = $filesize . ' bytes';
+        }
+        elseif ($filesize == 1)
+        {
+            $filesize = $filesize . ' byte';
+        }
+        else
+        {
+            $filesize = '0 file';
+        }
 ?>
-<li class='download' data-id='<?=$path?>\<?=$file?>'> <?=$file?> </li>
+<tr class='download' data-id='<?=$path?>\<?=$file?>'>
+<td> <?=$file?> </td>
+<td> <?=$filesize?></td>
+</tr>
 <?php }
 closedir($handle);
 }
 ?>
-</ol>
+</table>
 </div>
 </div>
 </body>
@@ -35,6 +68,7 @@ closedir($handle);
 <script>
 $(document).ready(function(){
 $('.download').on('click',function(){
+    if(confirm(true)){
 let el = this;
 let path = $(el).data('id');
 $.ajax({
@@ -45,6 +79,7 @@ success:function(data){
     window.location.replace(path);
 }
 })
+}
 })
 }
 )

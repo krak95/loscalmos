@@ -10,6 +10,7 @@
 *{
 padding:0;
 margin:0;
+font-family: Arial, Helvetica, sans-serif;
 }
 .firstdiv
 {
@@ -17,19 +18,41 @@ margin:10px;
 }
 .files-container
 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.files-container ol
+.files-container table
 {
+    width: 50%;
+    border-spacing: 0;
 }
-.files-container li
+.files-container tr
 {
-background-color: var(--bblue);
-margin:2px;
-padding:10px;
-display:block;
+width: 100%;
 }
-.files-container li:hover
+.files-container tr:hover
 {
 background-color: var(--blue);
 cursor: pointer;
+}
+.files-container tr:nth-child(1):hover
+{
+background-color: var(--bblue);
+cursor:default;
+}
+.files-container th
+{
+    width: 50%;
+    text-align: left;
+    padding:10px;
+    background-color: var(--dblue);
+    color: var(--bblue);
+}
+.files-container td
+{
+padding:10px;
+border-bottom:1px solid var(--blue);
+width: 50%;
 }
