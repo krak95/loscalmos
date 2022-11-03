@@ -1,0 +1,35 @@
+:root {
+--dblue: #38435E;
+--blue: #84A0DF;
+--bblue:#CAD2E3;
+--blue2:#657AAB;
+--grey:#54575E;
+--greenlight:rgb(0, 255, 0);
+--lowgreen:rgb(198, 255, 198);
+}
+*{
+padding:0;
+margin:0;
+}
+.firstdiv
+{
+margin:10px;
+}
+.files-container
+{
+}
+.files-container ol
+{
+}
+.files-container li
+{
+background-color: var(--bblue);
+margin:2px;
+padding:10px;
+display:block;
+}
+.files-container li:hover
+{
+background-color: var(--blue);
+cursor: pointer;
+}
