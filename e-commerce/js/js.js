@@ -1,3 +1,5 @@
+$(document).ready(function(){
+})
 function default1(){
 $(document).ready(function(){
 })

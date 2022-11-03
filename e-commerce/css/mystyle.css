@@ -10,21 +10,13 @@
 }
 ::-webkit-scrollbar 
 {
-    width: 6px;
-    height: 1px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track 
-  {
-    background-color: var(--bblue);
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb 
-  {
-    background: var(--dblue);
-  }
+width: 6px;
+height: 1px;
+}
+::-webkit-scrollbar-thumb 
+{
+background: var(--dblue);
+}
 *{
 border:none;
 margin:0;
@@ -85,7 +77,7 @@ background-color: var(--blue) !important;
 }
 .topmenu ol
 {
-  background: linear-gradient(90deg, var(--dblue) 0%, var(--blue2) 35%, var(--blue) 100%);
+background: linear-gradient(90deg, var(--dblue) 0%, var(--blue2) 35%, var(--blue) 100%);
 width: 100%;
 display: flex;
 justify-content: center;
@@ -118,8 +110,7 @@ box-shadow:inset 0 0 8px 4px var(--dblue) !important;
 }
 .main-content
 {   
-
-height: 100vh;
+margin-top:50px;
 width: 100%;
 display: flex;
 justify-content: center;
@@ -318,7 +309,6 @@ width: 80%;
 border:1px solid var(--blue);
 background-color: white;
 min-width: 200px !important;
-z-index: 1;
 }
 
 
@@ -413,9 +403,9 @@ animation-timing-function:ease-in-out ;
 
 .shop-div
 {
-  height: auto;
-  max-width: 90%;
-  min-width: 90%;
+height: auto;
+max-width: 90%;
+min-width: 90%;
 display:flex;
 align-items: center;
 flex-direction: column;
@@ -444,6 +434,7 @@ border-spacing: 0 10px;
 .shop-container tr
 {
 background-color: var(--bblue);
+
 }
 .shop-container tr:hover
 {
@@ -452,6 +443,7 @@ cursor: pointer;
 }
 .shop-container td
 {
+
 width: calc(100%/4);
 border-bottom:1px solid var(--blue);
 }
@@ -459,11 +451,19 @@ border-bottom:1px solid var(--blue);
 {
 border-top-left-radius: 5px;
 border-bottom-left-radius: 5px;
+-webkit-border-top-left-radius: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-moz-border-top-left-radius: 5px !important;
+-moz-border-bottom-left-radius: 5px !important;
 }
 .shop-container td:nth-child(4)
 {
 border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-webkit-border-bottom-right-radius: 5px;
+-moz-border-top-right-radius: 5px !important;
+-moz-border-bottom-right-radius: 5px !important;
 }
 
 .shop-container img{
@@ -496,16 +496,17 @@ height: auto;
 max-width: 90%;min-width: 90%;
 }
 .itempage-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: auto;
-  max-width: 90%;min-width: 90%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: auto;
+max-width: 100%;
+min-width: 100%;
 }
 .item-img img
 {
-  max-width: 50%;
-  height: auto;
+max-width: 50%;
+height: auto;
 margin:10px;
 }
 .item-header
@@ -518,16 +519,35 @@ margin:10px;
 }
 .item-stock div
 {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
 margin:10px !important;
 }
 .item-add
 {
-  display:flex;
-  justify-content: space-between;
+display:flex;
+justify-content: space-between;
 margin:10px;
+}
+.addto-cart{
+padding:10px;
+background-color: var(--blue2);
+box-shadow: 0 0 2px 1px var(--dblue);
+}
+.addto-cart:hover{
+box-shadow: inset 0 0 4px 4px var(--dblue);
+cursor: pointer;
+}
+.itempage-back-btn
+{
+background-color:var(--blue2)  ;
+box-shadow: 0 0 2px 1px var(--dblue);
+padding: 5px;
+}
+.itempage-back-btn:hover
+{
+box-shadow: inset 0 0 4px 4px var(--dblue);
 }
 .stock-green div {
 background-color:var(--greenlight);
@@ -615,12 +635,12 @@ background-color: whitesmoke;
 }
 .cart-container-table
 {
-    border:1px solid var(--blue);
-    max-height:650px !important;
-    min-height: 300px !important;
-    overflow-y: scroll;
-    justify-content: center;
-    display: flex;
+border:1px solid var(--blue);
+max-height:650px !important;
+min-height: 300px !important;
+overflow-y: scroll;
+justify-content: center;
+display: flex;
 }
 .cart-container-table table
 {
@@ -672,15 +692,7 @@ padding: 5px;
 .putout:hover{
 background-color:crimson;
 }
-.addto-cart{
-padding:10px;
-background-color: var(--blue2);
-}
-.addto-cart:hover{
-padding:10px;
-background-color: var(--blue);
-cursor: pointer;
-}
+
 
 /*ADMIN */
 .admin-div{
@@ -764,17 +776,17 @@ min-width: 150px;
 }
 .itemexists{
 transition: .5s;
-background-color: var(--blue);
+background-color: crimson;
 border-radius: 5px;
-box-shadow: 6px 6px 0px var(--dblue);
+box-shadow: 2px 2px 2px 2px var(--dblue);
 margin-bottom:10px;
 padding:20px;
 }
 .itemadded{
 transition: .5s;
-background-color: var(--blue);
+background-color: var(--lowgreen);
 border-radius: 5px;
-box-shadow: 6px 6px 0px var(--dblue);
+box-shadow: 2px 2px 2px 2px var(--dblue);
 margin-bottom:10px;
 padding:20px;
 }

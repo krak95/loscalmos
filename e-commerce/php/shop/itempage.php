@@ -52,7 +52,7 @@ case 3:echo "<div class='stock-red'><div></div></div>";break;
 </div>
 <div class='item-header'><?=$item_name?></div>
 <div class='item-price'>Preço: <?=$price?> €</div>
-<div class='item-stock'>Stock:
+<div class='item-stock'>
 <?php
 switch($stock){
 case 1:echo "<div class='stock-green'><div></div></div>";break;
@@ -60,9 +60,9 @@ case 2:echo "<div class='stock-yellow'><div></div></div>";break;
 case 3:echo "<div class='stock-red'><div></div></div>";break;
 }
 ?>
+</div>
 <div class='item-add'><button class='addto-cart' data-id2='<?=$item_name?>' data-id='<?=$item_id?>'id='addtocart' class='carrinho-img'><img src="php/img/icons/cart.png" alt=""></button>
 <button class='itempage-back-btn'><img src="php/img/icons/back.png" alt=""></button></div>
-</div>
 <?php
 }
 }
