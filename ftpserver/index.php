@@ -6,21 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href='css/style.css' rel='stylesheet'>
 <script src="jquery/jq.js"></script>
-
+<script src="jscript/script.js"></script>
+<script>$(document).ready(function(){
+download()
+}) </script>
 <title>FTP-API</title>
 </head>
 <body>
 <div class='firstdiv'>
     <h3>FTP-API</h3>
+    <div class="routing"></div>
     <div class='files-container'>
-    
-<table>
+    <?php
+$path   = 'files';
+?>
+<table id='mylastroute' data-id='<?=$path?>'>
 <th>Name</th>
 <th>Size</th>
-<?php
-        
 
-$path    = 'files';
+<?php
 if ($handle = opendir($path)) {
 while (false !== ($file = readdir($handle))) {
 if ('.' === $file) continue;
@@ -52,7 +56,7 @@ if ($filesize >= 1073741824)
             $filesize = '0 file';
         }
 ?>
-<tr class='download' data-id='<?=$path?>\<?=$file?>'>
+<tr class='download'  data-id='<?=$path?>\<?=$file?>' data-id2='<?=$file?>'>
 <td> <?=$file?> </td>
 <td> <?=$filesize?></td>
 </tr>
@@ -65,22 +69,3 @@ closedir($handle);
 </div>
 </body>
 </html>
-<script>
-$(document).ready(function(){
-$('.download').on('click',function(){
-    if(confirm(true)){
-let el = this;
-let path = $(el).data('id');
-$.ajax({
-url:'download.php/'+path,
-type:'get',
-data:{path:path},
-success:function(data){
-    window.location.replace(path);
-}
-})
-}
-})
-}
-)
-</script>
