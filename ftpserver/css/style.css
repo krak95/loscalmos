@@ -14,14 +14,21 @@ font-family: Arial, Helvetica, sans-serif;
 }
 .firstdiv
 {
-margin:10px;
+    height: 100vh;
+
+}
+.first-container{
+    height: 100vh;
+    width: 100%;
+}
+.first-container div
+{
+    margin-top:10px;
 }
 .files-container
 {
-    height: 100vh;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .files-container table
 {
@@ -55,4 +62,18 @@ cursor:default;
 padding:10px;
 border-bottom:1px solid var(--blue);
 width: 50%;
+}
+.routing
+{
+    width: 50%;
+}
+.routing a
+{
+    padding:10px;
+    border:1px solid var(--dblue);
+}
+.routing a:hover
+{
+    background-color: var(--blue);
+    cursor: pointer;
 }

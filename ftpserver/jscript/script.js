@@ -7,10 +7,10 @@ $.post({url:'filetype.php',data:{path:path},success:function(data){
 if(data == 'folder'){
 $.post({url:'showfolder.php',data:{path:path},success:function(data){
 $('.files-container').html(data);
-$('.routing').append("<a>"+route+"</a>");
+$('.routing').append("<a>"+route+"  </a>")
 $('.routing a').on('click',function(){
     let el = $(this);
-    let route2 = $(el).html();
+    let route2 = $(el).html().trim();
     $.post({url:'showfolder.php',data:{path:route2},success:function(data){
         $('.routing a').nextUntil().remove();
         setTimeout(() => {

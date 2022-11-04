@@ -13,8 +13,9 @@ download()
 <title>FTP-API</title>
 </head>
 <body>
-<div class='firstdiv'>
-    <h3>FTP-API</h3>
+    <div class='firstdiv'>
+        <div class='first-container'>
+    <div><h3>FTP-API</h3></div>
     <div class="routing"></div>
     <div class='files-container'>
     <?php
@@ -65,6 +66,7 @@ closedir($handle);
 }
 ?>
 </table>
+</div>
 </div>
 </div>
 </body>
