@@ -5,13 +5,17 @@ download()
 <?php
 $path = $_POST['path'];
 ?>
+
+
 <table id='mylastroute' data-id='<?=$path?>'>
+<div class="currentfolder" data-id='<?=basename($path)?>'>You are in <span><?=basename($path)?></span> folder.</div>
 <th>Name</th>
 <th>Size</th>
 
 <?php
 if ($handle = opendir($path)) {
-while (false !== ($file = readdir($handle))) {
+
+    while (false !== ($file = readdir($handle))) {
 if ('.' === $file) continue;
 if ('..' === $file) continue;
 $filesize = filesize($path.'/'.$file);

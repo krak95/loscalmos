@@ -1,3 +1,6 @@
+<?php
+$path   = 'files';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,13 +18,13 @@ download()
 <body>
     <div class='firstdiv'>
         <div class='first-container'>
-    <div><h3>FTP-API</h3></div>
+    <div><h1>FTP-API</h1></div>
     <div class="routing"></div>
     <div class='files-container'>
-    <?php
-$path   = 'files';
-?>
+
+<div class="currentfolder" data-id='<?=basename($path)?>'>You are in <span><?=basename($path)?></span> folder.</div>
 <table id='mylastroute' data-id='<?=$path?>'>
+
 <th>Name</th>
 <th>Size</th>
 
