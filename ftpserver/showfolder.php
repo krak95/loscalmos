@@ -41,7 +41,7 @@ else
 $filesize = '0 file';
 }
 ?>
-<tr class='download' data-id='<?=$path?>\<?=$file?>'>
+<tr class='download' data-id2='<?=$file?>' data-id='<?=$path?>\<?=$file?>'>
 <td> <?=$file?> </td>
 <td> <?=$filesize?></td>
 </tr>
