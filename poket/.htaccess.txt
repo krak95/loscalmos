@@ -1,0 +1,24 @@
+Options All -Indexes
+Options -Indexes
+Options + FollowSymlinks
+RewriteEngine On
+rewritecond% {REQUEST_FILENAME}! ^ (. +). css $
+rewritecond% {REQUEST_FILENAME}! ^ (. +) .js $
+rewritecond% {REQUEST_FILENAME}! file.php $
+RewriteRule ^ (. +) $ / Deny / [nc]
+php_value memory limit 128M
+php_value post_max_size 3M
+
+# Blocks some XSS attacks
+
+<IfModule>
+RewriteCond% {QUERY_STRING} (\ |% 3E) [NC, OR]
+RewriteCond% {QUERY_STRING} GLOBALS (= | \ [| \% [0-9A-Z] {0.2}) [OR]
+RewriteCond% {QUERY_STRING} _REQUEST (= | \ [| \% [0-9A-Z] {0.2})
+RewriteRule. * Index.php [F, L]
+
+</ IfModule>
+<files ".htaccess">
+order allow, deny
+deny from all
+</ files>

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 })
 function default1(){
 $(document).ready(function(){
@@ -23,6 +24,7 @@ $(this).addClass('topmenuselected')
 function loginform(){
 $(document).ready(function(){
 $('#topmenu-login').click(function(){
+    $('.user-orders').hide();
 $('.login-div').css('display','flex');
 $('.shop-div').css('display','none');
 $('.cart-div').css('display','none');
@@ -179,6 +181,7 @@ $('#login-btn').removeClass('login-btn-wrongform');
 function loggedin(){
 $(document).ready(function(){
 $('#topmenu-user').click(function(){
+    $('.user-orders').hide();
 $('.cart-div').css('display','none');
 $('.shop-div').css('display','none');
 $('.user-div').css('display','flex');
@@ -211,6 +214,7 @@ $('#logout-btn').removeClass('logout-btn-blink');
 function openshop(){
 $(document).ready(function(){
 $('#topmenu-shop').click(function(){
+    $('.user-orders').hide();
 $('.shop-div').css('display','flex');
 $('.cart-div').css('display','none');
 $('.login-div').css('display','none');
@@ -286,6 +290,7 @@ $(document).ready(function(){
 $('#addtocart').click(function(){
 var item_id = $(this).data('id');
 var item_name = $(this).data('id2');
+var price = $(this).data('id3');
 $.post('php/shop/checkitem.php', 
 {item_id: item_id}, 
 function(response) {
@@ -310,7 +315,7 @@ $('#red'+item_id).removeClass('iteminfo-blink-red');
 $.ajax({
 url:'php/shop/addtocart.php',
 type:'post',
-data:{item_id:item_id},
+data:{item_id:item_id,price:price},
 success:function(){
 $('.iteminfo').append('<div id=green'+item_id+' class="itemadded">'+item_name+' added!</div>');
 setTimeout(function() {
@@ -328,8 +333,9 @@ return;
 
 function cart(){
 $(document).ready(function(){
+    $('.emptycart').hide();
 $('#topmenu-cart').click(function(){
-
+    $('.user-orders').hide();
     if(($('.sessionstat').html() == '')){
         $('.shop-div').css('display','none');
         $('.cart-div').css('display','none');
@@ -337,13 +343,20 @@ $('#topmenu-cart').click(function(){
         $('.user-div').css('display','none');
         $('.login-container').append('you need to login before using the cart.')
     }else{
+        $('.shop-div').css('display','none');
+        $('.cart-div').css('display','flex');
+        $('.login-div').css('display','none');
+        $('.user-div').css('display','none');
+   $.post({
+    url:'php/shop/cartstatus.php',
+    type:'post',
+    success:function(data){
+        if(data == 'itemsfound')
+        {
+            $('.cart-container').show();
+            $('.cart-forwarding').show();
+            $('.emptycart').hide();
 
-   
-
-$('.shop-div').css('display','none');
-$('.cart-div').css('display','flex');
-$('.login-div').css('display','none');
-$('.user-div').css('display','none');
 var user_id = $('#user-id').data('id');
 $.ajax({
 url:'php/shop/cart.php',
@@ -358,13 +371,23 @@ url:'php/shop/itemlist.php',
 type:'post',
 data:{},
 success: function(){
+}
+})
+
+
+}else{
+    $('.cart-container').hide();
+    $('.cart-forwarding').hide();
+    $('.emptycart').show();
+}
+}
+})
 
 }
 })
-}
-})
 })
 }
+
 function imgup(){
 $(document).ready(function(){
 })
@@ -373,8 +396,8 @@ $(document).ready(function(){
 function changeavatar(){
 $(document).ready(function(){
 $('.avatar-menu').hide();
-$('.avatar-menu-open').click(function(e){
-$('.avatar-menu').show('slow');
+$('.avatar-menu-open').click(function(){
+$('.avatar-menu').toggle('fast');
 })
 })
 }
@@ -439,6 +462,37 @@ $('.cart-div ol').html(data);
 })
 })
 
+}
+
+function recordorder(){
+    $(document).ready(function(){
+        $('.payment').on('click',function(){
+            $('.cart-forwarding').append('<div class="loading-screen"><img src="php/img/icons/loading.png" alt=""></div>');
+            $.ajax({
+                url:'php/shop/recordorder.php',
+                success:function(){
+                    setTimeout(() => {
+                        $('.cart-container-table tr').remove();
+                        $('.cartlist li').remove();
+                        $('.loading-screen').remove();
+                    }, 2000);
+                }
+            })
+        })
+
+        $('.user-orders').hide();
+        $('#order-btn').on('click',function(){
+            $('.user-orders').toggle();
+            $.ajax({
+                url:'php/user/orderhistory.php',
+                type:'post',
+                data:{},
+                success:function(data){
+                    $('.user-orders').html(data);
+                }
+            })
+        })
+    })
 }
 
 function openadminfooter(){

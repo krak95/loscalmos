@@ -50,6 +50,7 @@ display:none;
 }
 button
 {
+font-weight: bold;
 border-radius: 5px;  
 }
 button:hover
@@ -299,22 +300,23 @@ box-shadow: 0 0 white, inset 80px 0 var(--lowgreen);
 display:none;
 justify-content: center;
 align-items: center;
+width: 100%;
 }
 .user-container
 {
 justify-content: center;
 align-items: center;
 border-radius:5px;
-width: 80%;
+width: 90%;
 border:1px solid var(--blue);
 background-color: white;
-min-width: 200px !important;
+min-width: 550px !important;
 }
-
-
 .user-container ol
 {
 margin:15px;
+display:flex;
+justify-content: space-evenly;
 }
 .user-container li
 {
@@ -374,6 +376,30 @@ border-radius:5px;
 {
 cursor: pointer;
 background-color: var(--blue);
+}
+.orderhistory
+{
+    padding:10px;
+    background-color: var(--blue2);
+}
+.orderhistory:hover
+{
+    background-color: var(--blue);
+}
+.user-orders
+{
+    margin:10px;
+    padding:10px;
+}
+.user-orders table
+{
+    border-spacing:0 12px;
+    text-align: center;
+    width: 100%;
+}
+.user-orders td
+{
+    border-bottom:1px solid var(--bblue);
 }
 .logout
 {
@@ -588,6 +614,7 @@ margin:0 auto;
 display:none;
 justify-content: center;
 align-items: center;
+flex-direction: column;
 width: 90% !important;
 }
 .cart-container{
@@ -692,7 +719,38 @@ padding: 5px;
 .putout:hover{
 background-color:crimson;
 }
-
+.cart-forwarding
+{
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    margin:20px;
+    padding:20px;
+    background-color: whitesmoke;
+    border:1px solid var(--blue);
+}
+.cart-forwarding button
+{
+    padding:20px;
+    background-color: var(--blue2);
+}
+.cart-forwarding button:hover
+{
+    padding:20px;
+    background-color: var(--blue);
+}
+.loading-screen img
+{
+    width: 30px;
+    height: auto;
+}
+.emptycart
+{
+    font-weight: bold;
+    font-size: large;
+}
 
 /*ADMIN */
 .admin-div{
@@ -851,5 +909,14 @@ overflow: hidden !important;
 .cartlist
 {
 display: none;
+}
+.user-container
+{
+    min-width: 190px !important;
+}
+.user-container ol
+{
+
+    display:block;
 }
 }

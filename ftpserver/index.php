@@ -11,7 +11,7 @@ $path   = 'files';
 <script src="jquery/jq.js"></script>
 <script src="jscript/script.js"></script>
 <script>$(document).ready(function(){
-download()
+download();
 }) </script>
 <title>FTP-API</title>
 </head>
@@ -71,6 +71,17 @@ closedir($handle);
 </table>
 </div>
 </div>
+
+<div class="upload-div" method="post" enctype="multipart/form-data">
+    <div class="upload-container">
+    <form action="upload.php" method='post' enctype="multipart/form-data">
+    <input type="file" id="file-toupload" name="file-toupload">
+    <button id="upload">upload</button>
+    </form>
+
+    </div>
+</div>
+
 </div>
 </body>
 </html>

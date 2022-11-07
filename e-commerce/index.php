@@ -101,7 +101,7 @@ $avatar = $row['avatar'];?>
 <li><p><?php echo $name ?></p></li>
 <li><p><?php echo $email ?></p></li>
 <li id='user_id' data-id='<?=$ssuid?>'><p><?php echo $ssuid ?></p></li>
-<li class='avatar-menu-open'>Change avatar</li>
+
 <li class='avatar-menu'>
 
 <form action="php/img/user-img/imgup.php" method="post" enctype="multipart/form-data">
@@ -110,10 +110,16 @@ $avatar = $row['avatar'];?>
 <label class='avatar-add-btn' for="file1">Adicionar imagem</label>
 <button class='upload' type="submit" name="upload">Upload</button>
 </form>
+<li><button  class='avatar-menu-open'>Change avatar</button></li>
 
 </li>
-<li > <button class='logout' id='logout-btn'>Sign out</button> </li>
+<li><button class='orderhistory' id='order-btn'>Show orders</button> </li>
+<li><button class='logout' id='logout-btn'>Sign out</button> </li>
 </ol>
+
+<div class="user-orders">
+
+</div>
 </div>
 </div>
 
@@ -160,9 +166,8 @@ case 3:echo "<td class='stock-red'><div></div></td>";break;
 </div>
 
 <div class='cart-div'>
+
 <div class='cart-container'>
-
-
 <div class="cart-container-table">
 <table id='cart-table'>
 </table>
@@ -172,6 +177,12 @@ case 3:echo "<td class='stock-red'><div></div></td>";break;
 </ol>
 </div> 
 </div>
+<div class="cart-forwarding">
+    <button class="payment">Choose payment method</button>
+</div>
+
+<div class="emptycart">Visit our store to add items to your cart.</div>
+
 </div>
 
 <?php 
@@ -209,15 +220,17 @@ if($admin == 1){
 
 </div>
 </div>
-<div class='iteminfo'></div>
 </div>
 <?php
 }
 ?>
+<div class='iteminfo'></div>
 <div class='backcurtain'></div>
+
 </body>
 </html>
 <script>
+recordorder()
 topmenuselected();
 loginform();
 login();

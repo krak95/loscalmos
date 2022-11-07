@@ -36,4 +36,5 @@ $quantidade = '1';
 echo 'Login first';
 }
 ?>
+
 <script>putout();quantity();itemlist();</script>

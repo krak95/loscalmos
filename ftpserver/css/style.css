@@ -97,3 +97,10 @@ cursor: pointer;
     margin:5px;
 border-bottom: 1px solid var(--blue);
 }
+
+.upload-div{
+    position: fixed;
+    bottom:0;
+    left:0;
+    
+}

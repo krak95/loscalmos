@@ -23,7 +23,7 @@ if ($admin != '1'){
 ?>
 <div class='item-img'><img src='php/img/item-img/<?=$img?>' /></div>
 <div class='item-header'><?=$item_name?></div>
-<div class='item-price'><?=$price?> €</div>
+<div class='item-price' ><?=$price?> €</div>
 <div class='item-stock'>
 <?php
 switch($stock){
@@ -32,12 +32,11 @@ case 2:echo "<div class='stock-yellow'><div></div></div>";break;
 case 3:echo "<div class='stock-red'><div></div></div>";break;
 }
 ?>
+
 </div>
 <div class='item-add'>
-<button data-id='<?=$item_id?>' id='addtocart' class='carrinho-img'><img src="php/img/icons/cart.png" alt=""></button>
-<button class='itempage-back-btn'><img src="php/img/icons/back.png" alt=""></button>
-</div>
-
+<button class='addto-cart' data-id3='<?=$price?>' data-id2='<?=$item_name?>' data-id='<?=$item_id?>'id='addtocart' class='carrinho-img'><img src="php/img/icons/cart.png" alt=""></button>
+<button class='itempage-back-btn'><img src="php/img/icons/back.png" alt=""></button></div>
 <?php 
 }else{
 ?>
@@ -51,7 +50,7 @@ case 3:echo "<div class='stock-red'><div></div></div>";break;
 </form>
 </div>
 <div class='item-header'><?=$item_name?></div>
-<div class='item-price'>Preço: <?=$price?> €</div>
+<div class='item-price' data-id3='<?=$price?>'>Preço: <?=$price?> €</div>
 <div class='item-stock'>
 <?php
 switch($stock){
@@ -61,7 +60,8 @@ case 3:echo "<div class='stock-red'><div></div></div>";break;
 }
 ?>
 </div>
-<div class='item-add'><button class='addto-cart' data-id2='<?=$item_name?>' data-id='<?=$item_id?>'id='addtocart' class='carrinho-img'><img src="php/img/icons/cart.png" alt=""></button>
+<div class='item-add'>
+<button class='addto-cart' data-id3='<?=$price?>' data-id2='<?=$item_name?>' data-id='<?=$item_id?>'id='addtocart' class='carrinho-img'><img src="php/img/icons/cart.png" alt=""></button>
 <button class='itempage-back-btn'><img src="php/img/icons/back.png" alt=""></button></div>
 <?php
 }
