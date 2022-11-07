@@ -45,6 +45,7 @@ class Login extends Dbh {
             $_SESSION['user_id'] = $user[0]["user_id"];
             $_SESSION['username'] = $user[0]["username"];
             $_SESSION['admin'] = $user[0]['admin'];
+            $_SESSION['email'] = $user[0]['email'];
         }
     }
     

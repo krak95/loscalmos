@@ -478,6 +478,19 @@ function recordorder(){
                     }, 2000);
                 }
             })
+            $.ajax({
+                url:'php/mail/mailbp.php',
+                success:function(data){
+                    $.ajax({
+                        url:'php/mail/mail.php',
+                        data:{data:data},
+                        type:'post',
+                        success:function(){
+                            alert('sent')
+                        }
+                    })
+                }
+            })
         })
 
         $('.user-orders').hide();

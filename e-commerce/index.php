@@ -23,7 +23,7 @@ $admin=$_SESSION['admin'] ?? null;
 </head>
 <body>
 
-<div style='display:none' class='sessionstat'><?= $_SESSION['username'] ?? null; ?></div>
+<div style='display:none' class='sessionstat'><?=$username?></div>
 </div>
 <div class='topmenu'>
 <ol>
