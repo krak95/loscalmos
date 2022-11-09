@@ -35,41 +35,41 @@
 
 <li data-id="ftpserver/index.php"                " id="ftpapi">FTP-API             
 <div state="hidden" class="img"> 
-    <img src="img/html.png" alt="">  
-    <img src="img/css.png" alt="">  
-    <img src="img/jquery.webp" alt="">  
-    <img src="img/php.png" alt="">  
-    <img src="img/sql.png" alt="">  
+<img src="img/html.png" alt="">  
+<img src="img/css.png" alt="">  
+<img src="img/jquery.webp" alt="">  
+<img src="img/php.png" alt="">  
+<img src="img/sql.png" alt="">  
 </div>
 </li>
 
 <li data-id="e-commerce/index.php"               " id="ecommwebapp">E-COMMERCE WEB-APP  
 <div state="hidden" class="img">  
-    <img src="img/html.png" alt="">  
-    <img src="img/css.png" alt="">  
-    <img src="img/jquery.webp" alt="">  
-    <img src="img/php.png" alt="">  
-    <img src="img/sql.png" alt="">  
+<img src="img/html.png" alt="">  
+<img src="img/css.png" alt="">  
+<img src="img/jquery.webp" alt="">  
+<img src="img/php.png" alt="">  
+<img src="img/sql.png" alt="">  
 </div>
 </li>
 
 <li data-id="alphaFeatures/db/index.php"         " id="dbapi">DATABASE-API        
 <div state="hidden" class="img"> 
-    <img src="img/html.png" alt="">  
-    <img src="img/css.png" alt="">  
-    <img src="img/jquery.webp" alt="">  
-    <img src="img/php.png" alt="">  
-    <img src="img/sql.png" alt="">  
+<img src="img/html.png" alt="">  
+<img src="img/css.png" alt="">  
+<img src="img/jquery.webp" alt="">  
+<img src="img/php.png" alt="">  
+<img src="img/sql.png" alt="">  
 </div>
 </li>
 
 <li data-id="alphaFeatures/sistemasmeca/index.php" id="taskmanager">TASK MANAGER        
 <div state="hidden" class="img"> 
-    <img src="img/html.png" alt="">  
-    <img src="img/css.png" alt="">  
-    <img src="img/jquery.webp" alt="">  
-    <img src="img/php.png" alt="">  
-    <img src="img/sql.png" alt="">  
+<img src="img/html.png" alt="">  
+<img src="img/css.png" alt="">  
+<img src="img/jquery.webp" alt="">  
+<img src="img/php.png" alt="">  
+<img src="img/sql.png" alt="">  
 </div>
 </li>
 
@@ -80,7 +80,7 @@
 
 </body>
 </html>
-<script>
+<script>/*$
 $(document).ready(function(){
 $('.container li').on('click',function(){
 let el = this;
@@ -90,22 +90,22 @@ $(location).prop('href',route);
 
 $('.img').css('display','none');
 
-$('.container li').hover(function(e){
+$('.list li').hover(function(){
 let el = this;
 if ($(el).children('.img').attr('state') == 'hidden'){
 $(el).children('.img').slideDown();
 $(el).children('.img').attr('state','visible');
 }
-})
 
-$('.container li').on('mouseleave',function(e){
-let el = this;
+
+$(el).on('mouseleave',function(){
 if ($(el).children('.img').attr('state') == 'visible'){
 $(el).children('.img').css('display','none');
 $(el).children('.img').attr('state','hidden');
 }
 })
-/*$('#frontend').hover(function(){
+})
+('#frontend').hover(function(){
 let el = this;
 let img = $(el).append('<img src="img/jquery.webp">');
 })
@@ -129,11 +129,11 @@ $('#taskmanager').hover(function(){
 let el = this;
 let img = $(el).append('<img src="img/jquery.webp">');
 })
-*/
+
 
 
 //END OF DOCUMENT
-})
+})*/
 </script>
 <style>
 :root
@@ -149,18 +149,32 @@ padding:0;
 margin:0;
 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+@keyframes show {
+100%
+{display:flex}
+
+}
+.list li:hover .img ,.list li:hover .img img
+{
+opacity: 1;
+transition: 0.5s;
+margin-left:10px;
+}
 .img
 {
+transition: 0.5s;
+opacity: 0;
 display:flex;
 justify-content: space-evenly;
 align-items: center;
 }
 .img img
 {
+transition: 0.5s;
 height: 40px;
 width:auto;
 display:flex;
-margin-left:25px;
+margin-left:-30px;
 }
 .container
 {
@@ -183,37 +197,31 @@ display:flex;
 flex-direction: column;
 align-items: flex-start;
 width: 100%;
-
 }
 .list ol
 {
-margin:20px;
+margin:30px;
 width: 90%;
-max-width: 500px;
+max-width: 800px;
 }
+
+li:hover
+{
+transition:1.5s;
+box-shadow: 0 0 25px 5px  var(--green2), inset 800px 0 var(--green3);
+
+}
+
 .list li{
-    height:20px;
-padding:20px;
+transition:1s;
+height:20px;
+padding:15px;
 text-align: left;
 display:flex;
 justify-content: space-between;
 align-items: center;
 cursor: pointer;
 border-radius:15px;
+margin-top:20px;
 }
-li:hover 
-{
-transition:0.2s;
-background-color: var(--green3);
-animation:shaker 0.3s;
-}
-@keyframes shaker {
-0%{transform:rotate(0)}
-20%{transform:rotate(-1deg)}
-40%{transform:rotate(1deg)}
-60%{transform:rotate(-1deg)}
-80%{transform:rotate(1deg)}
-100%{transform:rotate(0)}
-}
-
 </style>
