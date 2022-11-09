@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="jq.js"></script>
+<title>J.Amorim Portfolio</title>
+</head>
+<body>
+
+<div class="container">
+<div class="header">
+<h1>José Amorim</h1>
+</div>
+<div class="list">
+<ol>
+<li data-id="tempjs/index.html"                  " id="frontend">FRONT-END           
+<div state="hidden" class="img">  
+<div><img src="img/html.png" alt=""> </div> 
+<div><img src="img/css.png" alt="">  </div>
+<div><img src="img/jquery.webp" alt="">  </div>
+</div>
+</li>
+
+<li data-id="poket/index.php"                    " id="chatapi">CHAT API            
+<div state="hidden" class="img">  
+<img src="img/html.png" alt="">  
+<img src="img/css.png" alt="">  
+<img src="img/jquery.webp" alt="">  
+<img src="img/php.png" alt="">  
+<img src="img/sql.png" alt="">  
+</div>
+</li>
+
+<li data-id="ftpserver/index.php"                " id="ftpapi">FTP-API             
+<div state="hidden" class="img"> 
+    <img src="img/html.png" alt="">  
+    <img src="img/css.png" alt="">  
+    <img src="img/jquery.webp" alt="">  
+    <img src="img/php.png" alt="">  
+    <img src="img/sql.png" alt="">  
+</div>
+</li>
+
+<li data-id="e-commerce/index.php"               " id="ecommwebapp">E-COMMERCE WEB-APP  
+<div state="hidden" class="img">  
+    <img src="img/html.png" alt="">  
+    <img src="img/css.png" alt="">  
+    <img src="img/jquery.webp" alt="">  
+    <img src="img/php.png" alt="">  
+    <img src="img/sql.png" alt="">  
+</div>
+</li>
+
+<li data-id="alphaFeatures/db/index.php"         " id="dbapi">DATABASE-API        
+<div state="hidden" class="img"> 
+    <img src="img/html.png" alt="">  
+    <img src="img/css.png" alt="">  
+    <img src="img/jquery.webp" alt="">  
+    <img src="img/php.png" alt="">  
+    <img src="img/sql.png" alt="">  
+</div>
+</li>
+
+<li data-id="alphaFeatures/sistemasmeca/index.php" id="taskmanager">TASK MANAGER        
+<div state="hidden" class="img"> 
+    <img src="img/html.png" alt="">  
+    <img src="img/css.png" alt="">  
+    <img src="img/jquery.webp" alt="">  
+    <img src="img/php.png" alt="">  
+    <img src="img/sql.png" alt="">  
+</div>
+</li>
+
+</ol>
+</div>
+
+</div>
+
+</body>
+</html>
+<script>
+$(document).ready(function(){
+$('.container li').on('click',function(){
+let el = this;
+let route = $(this).data('id');
+$(location).prop('href',route);
+})
+
+$('.img').css('display','none');
+
+$('.container li').hover(function(e){
+let el = this;
+if ($(el).children('.img').attr('state') == 'hidden'){
+$(el).children('.img').slideDown();
+$(el).children('.img').attr('state','visible');
+}
+})
+
+$('.container li').on('mouseleave',function(e){
+let el = this;
+if ($(el).children('.img').attr('state') == 'visible'){
+$(el).children('.img').css('display','none');
+$(el).children('.img').attr('state','hidden');
+}
+})
+/*$('#frontend').hover(function(){
+let el = this;
+let img = $(el).append('<img src="img/jquery.webp">');
+})
+$('#chatapi').hover(function(){
+let el = this;
+let img = $(el).append('<img src="img/jquery.webp">');
+})
+$('#ftpapi').hover(function(){
+let el = this;
+let img = $(el).append('<img src="img/jquery.webp">');
+})
+$('#ecommwebapp').hover(function(){
+let el = this;
+let img = $(el).append('<img src="img/jquery.webp">');
+})
+$('#dbapi').hover(function(){
+let el = this;
+let img = $(el).append('<img src="img/jquery.webp">');
+})
+$('#taskmanager').hover(function(){
+let el = this;
+let img = $(el).append('<img src="img/jquery.webp">');
+})
+*/
+
+
+//END OF DOCUMENT
+})
+</script>
+<style>
+:root
+{
+--greendark1: #326348   ;
+--greendark2: #146338  ;
+--green2: #23B063 ;
+--green3: #2DE37F  ;
+--greenlight4: #74E8A8   ;
+}
+*{
+padding:0;
+margin:0;
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.img
+{
+display:flex;
+justify-content: space-evenly;
+align-items: center;
+}
+.img img
+{
+height: 40px;
+width:auto;
+display:flex;
+margin-left:25px;
+}
+.container
+{
+width: 100%;
+height: 100vh;
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: var(--greenlight4);
+}
+.header
+{
+position: fixed;
+top:0;
+}
+.list
+{
+display:flex;
+flex-direction: column;
+align-items: flex-start;
+width: 100%;
+
+}
+.list ol
+{
+margin:20px;
+width: 90%;
+max-width: 500px;
+}
+.list li{
+    height:20px;
+padding:20px;
+text-align: left;
+display:flex;
+justify-content: space-between;
+align-items: center;
+cursor: pointer;
+border-radius:15px;
+}
+li:hover 
+{
+transition:0.2s;
+background-color: var(--green3);
+animation:shaker 0.3s;
+}
+@keyframes shaker {
+0%{transform:rotate(0)}
+20%{transform:rotate(-1deg)}
+40%{transform:rotate(1deg)}
+60%{transform:rotate(-1deg)}
+80%{transform:rotate(1deg)}
+100%{transform:rotate(0)}
+}
+
+</style>
