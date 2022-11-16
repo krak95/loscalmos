@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="jq.js"></script>
+<title>Document</title>
+</head>
+<body>
+<div>
+<ol class="test">
+
+</ol>
+</div>
+</body>
+</html>
+<script>
+function test(new_name,new_type){
+class char {
+constructor(name,type){
+this.name = name;
+this.type = type;
+    }  
+}
+name = function(){
+    return this.name;
+}
+type = function(){
+    return this.type;
+}
+let newchar = new char(new_name,new_type);
+console.log(newchar.name,newchar.type)
+$('.test').append('<li>'+newchar.name+' '+newchar.type+'</li>')
+}
+test("fds0","caralho0")
+test("fds1","caralho1")
+test("fds2","caralho2")
+test("fds3","caralho3")
+test("fds4","caralho4")
+</script>

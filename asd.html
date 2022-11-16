@@ -1,16 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+<title>José Amorim</title>
 </head>
 <body>
-    <div class="stylingsession">
-        <div class="div">a</div>
+    <div class="mypage">
+<script>
+    var thing;
+    let func= (str='noarg') => {
+        console.log(str)
+    }
+func(thing)
+func(null)
 
-    </div>
+
+</script>
+  <div class="main-div">
+<h1>José Pedro Oliveira Amorim</h1>
+<div class="personalinfo-div">
+    <header> <strong>Personal info:</strong> </header>
+    <ul>
+        <li><strong>Phone number:</strong> 918944064;</li>
+        <li><strong>Address:</strong> <em>Escapães</em>, Rua Alfredo Henriques nº120;</li>
+        <li><strong>ZIP Code:</strong> 4520-027.</li>
+    </ul>
+</div>
+<div class="everyday-div">
+   <header> <strong>Everyday:</strong> </header>
+    <ol>
+        <li><p>I woke up;</p></li>
+        <li><p>I eat;</p></li>
+        <li><p>I take care of my personal higiene;</p></li>
+        <li><p>I go to school to learn mechatronics at <em>ESAN - Escola Superior Aveiro Norte</em>;</p></li>
+        <li><p>I wire at least a line of code;</p></li>
+        <li><p>I read;</p></li>
+        <li><p>I try to play a video game or watch a movie or tv show;</p></li>
+        <li><p>I go to sleep.</p></li>
+    </ol>
+</div>
+
+</div>
+</div>
+
+<style>
+:root {
+--dblue: #38435E;
+--blue: #84A0DF;
+--bblue:#CAD2E3;
+--blue2:#657AAB;
+--grey:#54575E;
+--greenlight:rgb(0, 255, 0);
+--lowgreen:rgb(198, 255, 198);
+}
+
+*{
+    padding:0;
+    margin:2px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body
+{
+    background-color: var(--bblue);
+}
+.mypage{
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-div h1{
+    margin-bottom:30px;
+    background: linear-gradient(to right,var(--blue), var(--blue2) 70%);
+    padding:10px;
+    border-radius:10px;
+    text-align: center;
+}
+.personalinfo-div
+{
+    background: linear-gradient(to right,var(--blue), var(--blue2) 70%);
+    padding:14px;
+    border-radius:10px;
+    margin-bottom:14px;
+}
+.personalinfo-div header {
+    font-size: 20px;
+}
+.personalinfo-div ul
+{
+    margin:14px;
+    padding:4px;
+    margin-bottom:0;
+}
+.personalinfo-div li
+{
+    padding:4px;
+}
+.personalinfo-div li:hover
+{
+    background-color: var(--bblue);
+    border-radius: 6px;
+    cursor: pointer;
+}
+.everyday-div
+{
+    background: linear-gradient(to right,var(--blue), var(--blue2) 70%);
+    padding:14px;
+    border-radius:10px;
+}
+.everyday-div header
+{
+font-size:20px;
+}
+.everyday-div ol
+{
+    font-weight: bold;
+    margin:14px;
+    padding:4px;
+    margin-bottom:0;
+}
+.everyday-div li
+{
+    padding:4px;
+}
+.everyday-div li:hover
+{
+    background-color: var(--bblue);
+    border-radius: 6px;
+    cursor: pointer;
+}
+.everyday-div li p
+{
+    font-weight: normal;
+}
+
+</style>
 </body>
 </html>
